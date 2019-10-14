@@ -21,6 +21,7 @@ func (this *handle2) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 	proxy := httputil.NewSingleHostReverseProxy(remote)
+	// proxy.ErrorHandler =   如果代理出错，则转向其他后端服务，并检查这个出错服务是否正常，如果不正常则踢出iplist
 	proxy.ServeHTTP(w, r)
 }
 

@@ -8,6 +8,7 @@ package main
 import (
 	"errors"
 	"flag"
+	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -28,6 +29,8 @@ var upgrader = websocket.Upgrader{
 
 // echoCopy echoes messages from the client using io.Copy.
 func echoCopy(w http.ResponseWriter, r *http.Request, writerOnly bool) {
+	id := r.URL.Query()["id"] // 可以读取请求参数
+	fmt.Println(id)
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		log.Println("Upgrade:", err)
