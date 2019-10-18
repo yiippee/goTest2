@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7bcea47-c1df-4196-b91e-be8185dc9622" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gateway/discovery/master.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/discovery/service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/discovery/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/discovery/service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/main2.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/main2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -157,7 +155,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="websocket 读取请求参数" />
     <MESSAGE value="websocket 框架melody&#10;为什么有tcp还需要websocket呢？&#10;1,80端口更通用啊，tcp走其他的端口不一样有效；&#10;2，tcp是字节流，websocket是信息流，只要收到肯定是一个完整的信息，而tcp可能收发都可能无法获取完整的信息，需要处理；&#10;3，websocket是与http一样的应用层协议" />
-    <option name="LAST_COMMIT_MESSAGE" value="websocket 框架melody&#10;为什么有tcp还需要websocket呢？&#10;1,80端口更通用啊，tcp走其他的端口不一样有效；&#10;2，tcp是字节流，websocket是信息流，只要收到肯定是一个完整的信息，而tcp可能收发都可能无法获取完整的信息，需要处理；&#10;3，websocket是与http一样的应用层协议" />
+    <MESSAGE value="新增etcd作为服务注册与发现例子&#10;实现了master来watch某个路径下所有服务&#10;service端注册自己的服务，获取一个租约，并keepalive" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增etcd作为服务注册与发现例子&#10;实现了master来watch某个路径下所有服务&#10;service端注册自己的服务，获取一个租约，并keepalive" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>

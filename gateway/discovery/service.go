@@ -6,6 +6,7 @@ import (
 	"errors"
 	"github.com/coreos/etcd/clientv3"
 	"log"
+	"net/http"
 	"time"
 )
 
@@ -43,6 +44,16 @@ func NewService(name string, info ServiceInfo, endpoints []string) (*Service, er
 
 func (s *Service) Start() error {
 
+	go func() {
+		time.Sleep(time.Second * 10)
+		s.stop <- errors.New("time out.")
+	}()
+	// 开启自己的服务
+	http.HandleFunc("/test", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("hello,world."))
+	})
+	go http.ListenAndServe(s.Info.IP, nil)
+
 	ch, err := s.keepAlive()
 	if err != nil {
 		log.Fatal(err)
@@ -53,6 +64,7 @@ func (s *Service) Start() error {
 		select {
 		case err := <-s.stop:
 			s.revoke()
+			log.Println(err)
 			return err
 		case <-s.client.Ctx().Done():
 			return errors.New("server closed")

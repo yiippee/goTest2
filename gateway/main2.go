@@ -22,6 +22,7 @@ func (this *handle2) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("no service!"))
 		return
 	}
+	// todo 获取需要加锁
 	key := this.m.Keys[rand.Int()%len(this.m.Keys)]
 	addr := this.m.Nodes[key].Info.IP
 
