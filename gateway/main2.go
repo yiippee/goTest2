@@ -21,21 +21,25 @@ func (this *handle2) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 	proxy := httputil.NewSingleHostReverseProxy(remote)
-	// proxy.ErrorHandler =   如果代理出错，则转向其他后端服务，并检查这个出错服务是否正常，如果不正常则踢出iplist
+	//如果代理出错，则转向其他后端服务，并检查这个出错服务是否正常，如果不正常则踢出iplist
+	proxy.ErrorHandler = func(writer http.ResponseWriter, request *http.Request, e error) {
+		robin.Del(addr)
+	}
 	proxy.ServeHTTP(w, r)
 }
 
 func startServer2() {
 	// 被代理的服务器host和port
 	h := &handle2{}
-	h.addrs = []string{"127.0.0.1:28081", "127.0.0.1:28082"}
+	h.addrs = []string{"127.0.0.1:12001", "127.0.0.1:12002"}
 
 	w := 1
 	for _, e := range h.addrs {
 		robin.Add(e, w)
 		w++
 	}
-	err := http.ListenAndServe(":28080", h)
+
+	err := http.ListenAndServe(":12000", h)
 	if err != nil {
 		log.Fatalln("ListenAndServe: ", err)
 	}

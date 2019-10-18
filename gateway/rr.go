@@ -6,6 +6,7 @@ type RR interface {
 	Add(node interface{}, weight int)
 	RemoveAll()
 	Reset()
+	Del(node interface{})
 }
 
 const (
@@ -52,6 +53,16 @@ func (w *WNGINX) Add(node interface{}, weight int) {
 		EffectiveWeight: weight}
 	w.nodes = append(w.nodes, weighted)
 	w.n++
+}
+
+// 刪除权重节点
+func (w *WNGINX) Del(node interface{}) {
+	for k, v := range w.nodes {
+		if v.Node == node {
+			w.nodes = append(w.nodes[:k], w.nodes[k+1:]...)
+			w.n--
+		}
+	}
 }
 
 func (w *WNGINX) RemoveAll() {
@@ -167,6 +178,16 @@ func (w *WLVS) Add(node interface{}, weight int) {
 	}
 	w.nodes = append(w.nodes, weighted)
 	w.n++
+}
+
+// 刪除权重节点
+func (w *WLVS) Del(node interface{}) {
+	for k, v := range w.nodes {
+		if v.Node == node {
+			w.nodes = append(w.nodes[:k], w.nodes[k+1:]...)
+			w.n--
+		}
+	}
 }
 
 func gcd(x, y int) int {

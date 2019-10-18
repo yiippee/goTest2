@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7bcea47-c1df-4196-b91e-be8185dc9622" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/melody/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/main2.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/main2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/rr.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/rr.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/websocket/autobahn.go" beforeDir="false" afterPath="$PROJECT_DIR$/websocket/autobahn.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,6 +34,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
@@ -37,7 +42,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../eshd" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../supervisor-event-listener" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
@@ -54,7 +59,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build goTest/websocket">
+  <component name="RunManager" selected="Go Build.go build goTest/melody">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -74,21 +79,20 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build goTest/mongodb" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build goTest/gateway" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/mongodb/main.go" />
-      <package value="goTest/mongodb" />
+      <package value="goTest/gateway" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build goTest/reuseport" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build goTest/melody" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/reuseport/main.go" />
-      <package value="goTest/reuseport" />
+      <filePath value="$PROJECT_DIR$/melody/main.go" />
+      <package value="goTest/melody" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -123,11 +127,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build goTest/melody" />
         <item itemvalue="Go Build.go build goTest/websocket" />
-        <item itemvalue="Go Build.go build goTest/staticFile" />
         <item itemvalue="Go Build.go build goTest/etcd" />
-        <item itemvalue="Go Build.go build goTest/mongodb" />
-        <item itemvalue="Go Build.go build goTest/reuseport" />
+        <item itemvalue="Go Build.go build goTest/gateway" />
+        <item itemvalue="Go Build.go build goTest/staticFile" />
       </list>
     </recent_temporary>
   </component>
@@ -146,6 +150,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="websocket 读取请求参数" />
+    <option name="LAST_COMMIT_MESSAGE" value="websocket 读取请求参数" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -175,9 +183,9 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/websocket/autobahn.go</url>
-          <line>81</line>
-          <option name="timeStamp" value="13" />
+          <url>file://$PROJECT_DIR$/gateway/main2.go</url>
+          <line>25</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
