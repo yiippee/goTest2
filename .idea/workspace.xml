@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7bcea47-c1df-4196-b91e-be8185dc9622" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/melody/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/discovery/master.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/discovery/service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/main2.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/main2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/rr.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/rr.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocket/autobahn.go" beforeDir="false" afterPath="$PROJECT_DIR$/websocket/autobahn.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,10 +40,15 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../supervisor-event-listener" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/gateway/discovery" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\lzb\golang\src\goTest2\gateway\discovery" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -59,7 +62,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build goTest/melody">
+  <component name="RunManager" selected="Go Build.go build goTest/gateway">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -127,10 +130,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build goTest/gateway" />
         <item itemvalue="Go Build.go build goTest/melody" />
         <item itemvalue="Go Build.go build goTest/websocket" />
         <item itemvalue="Go Build.go build goTest/etcd" />
-        <item itemvalue="Go Build.go build goTest/gateway" />
         <item itemvalue="Go Build.go build goTest/staticFile" />
       </list>
     </recent_temporary>
@@ -153,7 +156,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="websocket 读取请求参数" />
-    <option name="LAST_COMMIT_MESSAGE" value="websocket 读取请求参数" />
+    <MESSAGE value="websocket 框架melody&#10;为什么有tcp还需要websocket呢？&#10;1,80端口更通用啊，tcp走其他的端口不一样有效；&#10;2，tcp是字节流，websocket是信息流，只要收到肯定是一个完整的信息，而tcp可能收发都可能无法获取完整的信息，需要处理；&#10;3，websocket是与http一样的应用层协议" />
+    <option name="LAST_COMMIT_MESSAGE" value="websocket 框架melody&#10;为什么有tcp还需要websocket呢？&#10;1,80端口更通用啊，tcp走其他的端口不一样有效；&#10;2，tcp是字节流，websocket是信息流，只要收到肯定是一个完整的信息，而tcp可能收发都可能无法获取完整的信息，需要处理；&#10;3，websocket是与http一样的应用层协议" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -184,8 +188,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/gateway/main2.go</url>
-          <line>25</line>
-          <option name="timeStamp" value="14" />
+          <line>87</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
