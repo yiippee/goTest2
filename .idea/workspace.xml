@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7bcea47-c1df-4196-b91e-be8185dc9622" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/captain/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/connPool/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/discovery/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/discovery/service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/main2.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/main2.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tcpproxy/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/tcpproxy/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +64,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build goTest/gateway">
+  <component name="RunManager" selected="Go Build.go build goTest/tcpproxy">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -71,12 +75,21 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build goTest/etcd" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build goTest/captain" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/etcd/client.go" />
-      <package value="goTest/etcd" />
+      <filePath value="$PROJECT_DIR$/captain/main.go" />
+      <package value="goTest/captain" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build goTest/connPool" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goTest2" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/connPool/main.go" />
+      <package value="goTest/connPool" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -97,21 +110,12 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build goTest/staticFile" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build goTest/tcpproxy" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/staticFile/main.go" />
-      <package value="goTest/staticFile" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build goTest/websocket" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="goTest2" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/websocket/main.go" />
-      <package value="goTest/websocket" />
+      <filePath value="$PROJECT_DIR$/tcpproxy/main.go" />
+      <package value="goTest/tcpproxy" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -128,11 +132,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build goTest/tcpproxy" />
+        <item itemvalue="Go Build.go build goTest/connPool" />
+        <item itemvalue="Go Build.go build goTest/captain" />
         <item itemvalue="Go Build.go build goTest/gateway" />
         <item itemvalue="Go Build.go build goTest/melody" />
-        <item itemvalue="Go Build.go build goTest/websocket" />
-        <item itemvalue="Go Build.go build goTest/etcd" />
-        <item itemvalue="Go Build.go build goTest/staticFile" />
       </list>
     </recent_temporary>
   </component>
@@ -166,11 +170,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/tcpproxy/main.go</url>
-          <line>101</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/mongodb/main.go</url>
           <line>18</line>
           <option name="timeStamp" value="10" />
@@ -189,6 +188,11 @@
           <url>file://$PROJECT_DIR$/gateway/main2.go</url>
           <line>87</line>
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/connPool/main.go</url>
+          <line>10</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

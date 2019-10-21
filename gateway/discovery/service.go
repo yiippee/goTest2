@@ -46,7 +46,7 @@ func (s *Service) Start() error {
 
 	go func() {
 		time.Sleep(time.Second * 10)
-		s.stop <- errors.New("time out.")
+		// s.stop <- errors.New("time out.")
 	}()
 	// 开启自己的服务
 	http.HandleFunc("/test", func(w http.ResponseWriter, r *http.Request) {
@@ -74,7 +74,7 @@ func (s *Service) Start() error {
 				s.revoke()
 				return nil
 			} else {
-				log.Printf("Recv reply from service: %s, ttl:%d", s.Name, ka.TTL)
+				log.Printf("Recv reply from service: %s, lease ID: %x ttl:%d", s.Name, s.leaseid, ka.TTL)
 			}
 		}
 	}

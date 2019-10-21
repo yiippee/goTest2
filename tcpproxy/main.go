@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
+	"github.com/fatih/pool"
 	"hash/crc32"
 	"io"
 	"net"
@@ -17,10 +18,11 @@ var IPList []string
 var ip string
 var list string
 var bufpool *sync.Pool
+var connPool pool.Pool
 
 func main() {
 	flag.StringVar(&ip, "l", ":9897", "-l=0.0.0.0:9897 指定服务监听的端口")
-	flag.StringVar(&list, "d", "127.0.0.1:1789,127.0.0.1:1788,127.0.0.1:1787", "-d=127.0.0.1:1789,127.0.0.1:1788 指定后端的IP和端口,多个用','隔开")
+	flag.StringVar(&list, "d", "127.0.0.1:1789", "-d=127.0.0.1:1789,127.0.0.1:1788 指定后端的IP和端口,多个用','隔开")
 	flag.Parse()
 	IPList = strings.Split(list, ",")
 	if len(IPList) <= 0 {
@@ -52,11 +54,15 @@ func handle(sconn net.Conn) {
 	defer sconn.Close()
 
 	// 选择需要连接的服务器ip,这里可以做一些路由策略
+	// todo 这里考虑根据路由策略，获取哪一个连接池来获取具体的连接
 	ip, ok := getIP(sconn)
 	if !ok {
 		return
 	}
-	dconn, err := net.Dial("tcp", ip)
+
+	// 此处可以设置一个连接池来优化
+	// dconn, err := net.Dial("tcp", ip)
+	dconn, err := connPool.Get()
 	if err != nil {
 		fmt.Printf("连接%v失败:%v\n", ip, err)
 		return
@@ -88,7 +94,7 @@ func getIP(sconn net.Conn) (string, bool) {
 	reader := bufio.NewReader(sconn)
 	buf, _, err := reader.ReadLine()
 
-	if err != nil  {
+	if err != nil {
 		return "", false
 	}
 
@@ -99,9 +105,9 @@ func getIP(sconn net.Conn) (string, bool) {
 		return "", false
 	}
 	// 根据登录者的id，hash到具体的某一个后端服务器
-	ip := IPList[crc32.ChecksumIEEE(buf) % 3]
-	ip = IPList[crc32.ChecksumIEEE([]byte("lizhanbin")) % 3]
-	ip = IPList[crc32.ChecksumIEEE([]byte("zhangsumin")) % 3]
+	ip := IPList[crc32.ChecksumIEEE(buf)%1]
+	ip = IPList[crc32.ChecksumIEEE([]byte("lizhanbin"))%1]
+	ip = IPList[crc32.ChecksumIEEE([]byte("zhangsumin"))%1]
 
 	return ip, true
 }
@@ -144,8 +150,22 @@ func Copy(dst io.Writer, src io.Reader) (written int64, err error) {
 }
 
 func init() {
+	// 内存池
 	bufpool = &sync.Pool{}
 	bufpool.New = func() interface{} {
 		return make([]byte, 32*1024)
+	}
+
+	// 连接池
+	// create a factory() to be used with channel based pool
+	factory := func() (net.Conn, error) { return net.Dial("tcp", "127.0.0.1:1789") }
+
+	// create a new channel based pool with an initial capacity of 5 and maximum
+	// capacity of 30. The factory will create 5 initial connections and put it
+	// into the pool.
+	var err error
+	connPool, err = pool.NewChannelPool(5, 30, factory)
+	if err != nil {
+		panic(err)
 	}
 }

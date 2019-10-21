@@ -22,6 +22,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible h1:7qlOGliEKZXTDg6OTjfoBKDXWrumCAMpl/TFQ4/5kLM=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
+github.com/fatih/pool v3.0.0+incompatible h1:3xXzI/t5o6aEU/R+xe7ed44CTw41lV3oB0gB5pNXS5U=
+github.com/fatih/pool v3.0.0+incompatible/go.mod h1:v+kkrv3f2oJ1P9NHaKArMYdTVtNCwfR0DlXwnhA2L4k=
 github.com/funny/link v0.0.0-20190805113223-98708916287b h1:10z91K3w/nwTxulupVpdrR+8NhzyWufPbGgvy3zYscQ=
 github.com/funny/link v0.0.0-20190805113223-98708916287b/go.mod h1:ajJ48jAHusPjnL6cGCP4+f2JoOjBUttNeVas4w9NXtc=
 github.com/funny/utest v0.0.0-20161029064919-43870a374500 h1:Z0r1CZnoIWFB/Uiwh1BU5FYmuFe6L5NPi6XWQEmsTRg=
@@ -113,6 +115,8 @@ github.com/prometheus/procfs v0.0.0-20181005140218-185b4288413d/go.mod h1:c3At6R
 github.com/prometheus/procfs v0.0.2/go.mod h1:TjEm7ze935MbeOT/UhFTIMYKhuLP4wbCsTZCD3I8kEA=
 github.com/prometheus/procfs v0.0.3 h1:CTwfnzjQ+8dS6MhHHu4YswVAD99sL2wjPqP+VkURmKE=
 github.com/prometheus/procfs v0.0.3/go.mod h1:4A/X28fw3Fc593LaREMrKMqOKvUAntwMDaekg4FpcdQ=
+github.com/pyloque/gocaptain v0.0.0-20160623031443-8e6a4933f710 h1:XR1GPyAvvsQVVdewjRaISZtOzaJC7RPbPCGr1UzeWt4=
+github.com/pyloque/gocaptain v0.0.0-20160623031443-8e6a4933f710/go.mod h1:vaLAQWv66U+eLnoNEL+MB3MeREAMMgq9ITTK8thVJ4Q=
 github.com/rakyll/statik v0.1.6 h1:uICcfUXpgqtw2VopbIncslhAmE5hwc4g20TEyEENBNs=
 github.com/rakyll/statik v0.1.6/go.mod h1:OEi9wJV/fMUAGx1eNjq75DKDsJVuEv1U0oYdX6GX8Zs=
 github.com/rogpeppe/fastuuid v0.0.0-20150106093220-6724a57986af/go.mod h1:XWv6SoW27p1b0cqNHllgS5HIMJraePCO15w5zCzIWYg=

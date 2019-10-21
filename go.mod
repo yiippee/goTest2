@@ -9,6 +9,7 @@ require (
 	github.com/coreos/go-systemd v0.0.0-20190719114852-fd7a80b32e1f // indirect
 	github.com/coreos/pkg v0.0.0-20180928190104-399ea9e2e55f // indirect
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
+	github.com/fatih/pool v3.0.0+incompatible
 	github.com/funny/link v0.0.0-20190805113223-98708916287b
 	github.com/funny/utest v0.0.0-20161029064919-43870a374500 // indirect
 	github.com/gin-gonic/gin v1.4.0
@@ -22,6 +23,7 @@ require (
 	github.com/grpc-ecosystem/grpc-gateway v1.11.3 // indirect
 	github.com/jonboulle/clockwork v0.1.0 // indirect
 	github.com/prometheus/client_golang v1.1.0 // indirect
+	github.com/pyloque/gocaptain v0.0.0-20160623031443-8e6a4933f710
 	github.com/rakyll/statik v0.1.6
 	github.com/soheilhy/cmux v0.1.4 // indirect
 	github.com/tmc/grpc-websocket-proxy v0.0.0-20190109142713-0ad062ec5ee5 // indirect
