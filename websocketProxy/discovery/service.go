@@ -49,11 +49,10 @@ func (s *Service) Start() error {
 		// s.stop <- errors.New("time out.")
 	}()
 	// 开启自己的服务
-	mux := http.NewServeMux()
-	mux.HandleFunc("/test", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/test", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("hello,world."))
 	})
-	go http.ListenAndServe(s.Info.IP, mux)
+	go http.ListenAndServe(s.Info.IP, nil)
 
 	ch, err := s.keepAlive()
 	if err != nil {
@@ -69,13 +68,13 @@ func (s *Service) Start() error {
 			return err
 		case <-s.client.Ctx().Done():
 			return errors.New("server closed")
-		case _, ok := <-ch:
+		case ka, ok := <-ch:
 			if !ok {
 				log.Println("keep alive channel closed")
 				s.revoke()
 				return nil
 			} else {
-				//log.Printf("Recv reply from service: %s, lease ID: %x ttl:%d", s.Name, s.leaseid, ka.TTL)
+				log.Printf("Recv reply from service: %s, lease ID: %x ttl:%d", s.Name, s.leaseid, ka.TTL)
 			}
 		}
 	}

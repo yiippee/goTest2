@@ -17,6 +17,14 @@ type handle2 struct {
 }
 
 func (this *handle2) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	// 获取所有的服务列表
+	if r.URL.Path == "/list" {
+		for _, v := range this.m.Nodes {
+			fmt.Fprintf(w, "%v\n", *v)
+		}
+
+		return
+	}
 	// 选择后端服务器策略
 	if len(this.m.Keys) == 0 {
 		w.Write([]byte("no service!"))
@@ -54,20 +62,10 @@ func startServer2(m *dis.Master) {
 	}
 }
 
-func main() {
-	m, err := dis.NewMaster([]string{
-		"http://127.0.0.1:2379",
-	}, "services/")
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	// service
-	serviceName := "service-test"
+func serviceStart(serviceName string, ip string) {
 	// 注册的信息
 	serviceInfo := dis.ServiceInfo{
-		IP: "127.0.0.1:12001",
+		IP: ip,
 	}
 
 	s, err := dis.NewService(serviceName, serviceInfo, []string{
@@ -81,7 +79,18 @@ func main() {
 	fmt.Printf("name:%s, ip:%s\n", s.Name, s.Info.IP)
 
 	go s.Start()
+}
+func main() {
+	m, err := dis.NewMaster([]string{
+		"http://127.0.0.1:2379",
+	}, "services/")
 
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	serviceStart("service1", "http://127.0.0.1:12001")
+	//serviceStart("service2", "http://127.0.0.1:12002")
 	//
 	//for {
 	//	for k, v := range  m.Nodes {
