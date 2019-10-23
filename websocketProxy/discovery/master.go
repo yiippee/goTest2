@@ -18,9 +18,17 @@ type Master struct {
 	sync.Mutex
 }
 
+type ServiceState int
+
+const (
+	ON_LINE ServiceState = iota
+	OFF_LINE
+	UPGRADING // 升级维护
+)
+
 //node is a client
 type Node struct {
-	State bool
+	State ServiceState
 	Key   string
 	Info  ServiceInfo
 }
@@ -50,7 +58,7 @@ func (m *Master) AddNode(key string, info *ServiceInfo) {
 	m.Lock()
 	defer m.Unlock()
 	node := &Node{
-		State: true,
+		State: ON_LINE,
 		Key:   key,
 		Info:  *info,
 	}

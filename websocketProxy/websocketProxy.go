@@ -2,21 +2,21 @@ package main
 
 import (
 	"errors"
+	"fmt"
 	"github.com/fatih/pool"
 	"github.com/gorilla/websocket"
 	"goTest/websocketProxy/discovery"
-	"hash/crc32"
 	"io"
 	"log"
 	"net/http"
+	"net/http/httputil"
 	"net/url"
 	"sync"
-	"time"
 )
 
 const ETCD_ADDR = "http://127.0.0.1:2379" // etcd 服务地址
 const SERVICES_DIR = "services/"          // 监听的目录
-const LOCALHOST = ":6666"                 // 本地地址
+const LOCALHOST = ":6699"                 // 本地地址
 
 var bufpool *sync.Pool
 var connPool pool.Pool
@@ -38,111 +38,127 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	token := r.URL.Query()["token"]
 	if token == nil {
 		// 去鉴权
+		fmt.Fprintf(w, "%s", "no auth,please login.")
 		return
 	}
 	// 根据token路由
-	h.master.Lock()
-	l := len(h.master.Keys)
-	if l == 0 {
-		// 没有机器啊
-		return
-	}
-	key := h.master.Keys[int(crc32.ChecksumIEEE([]byte(token[0])))%l]
-	ip := h.master.Nodes[key].Info.IP
-	h.master.Unlock()
+	//h.master.Lock()
+	//l := len(h.master.Keys)
+	//if l == 0 {
+	//	// 没有机器啊
+	//	fmt.Fprintf(w, "%s", "no service.")
+	//	h.master.Unlock()
+	//	return
+	//}
+	//key := h.master.Keys[int(crc32.ChecksumIEEE([]byte(token[0])))%l]
+	//ip := h.master.Nodes[key].Info.IP
+	//h.master.Unlock()
+	//fmt.Println(ip)
+	// 为什么一定要改成 http 呢？ 因为在握手阶段使用的就是http啊
+	// 在具体的通信阶段才使用ws协议通信。这里还是需要http进行的
+	// 具体通信过程，代理服务器自动做了。只要你在header里面添加upgrade字段就可以标识是ws了
+	ip := "http://127.0.0.1:8080" // "ws://127.0.0.1:8080"
 
-	u := url.URL{Scheme: "ws", Host: ip, Path: r.URL.Path}
-	dst, _, err := websocket.DefaultDialer.Dial(u.String(), nil)
-	if err != nil {
-		log.Fatal(err)
-	}
+	backURL, _ := url.Parse(ip)
+	rproxy := httputil.NewSingleHostReverseProxy(backURL)
 
-	src, err := upgrader.Upgrade(w, r, nil)
-
-	exitChan := make(chan struct{}, 1)
-	go func(dst *websocket.Conn, src *websocket.Conn, exit chan struct{}) {
-		for {
-			mt, r, err := src.NextReader()
-			if err != nil {
-				if err != io.EOF {
-					log.Println("NextReader:", err)
-				}
-				return
-			}
-			if mt == websocket.TextMessage {
-				r = &validator{r: r}
-			}
-			w, err := dst.NextWriter(mt)
-			if err != nil {
-				log.Println("NextWriter:", err)
-				return
-			}
-			if mt == websocket.TextMessage {
-				r = &validator{r: r}
-			}
-			_, err = io.Copy(w, r)
-
-			if err != nil {
-				if err == errInvalidUTF8 {
-					_ = src.WriteControl(websocket.CloseMessage,
-						websocket.FormatCloseMessage(websocket.CloseInvalidFramePayloadData, ""),
-						time.Time{})
-				}
-				log.Println("Copy:", err)
-				return
-			}
-			err = w.Close()
-			if err != nil {
-				log.Println("Close:", err)
-				return
-			}
-		}
-
-		exit <- struct{}{}
-
-	}(dst, src, exitChan)
-
-	go func(dst *websocket.Conn, src *websocket.Conn, exit chan struct{}) {
-		for {
-			mt, r, err := dst.NextReader()
-			if err != nil {
-				if err != io.EOF {
-					log.Println("NextReader:", err)
-				}
-				return
-			}
-			if mt == websocket.TextMessage {
-				r = &validator{r: r}
-			}
-			w, err := src.NextWriter(mt)
-			if err != nil {
-				log.Println("NextWriter:", err)
-				return
-			}
-			if mt == websocket.TextMessage {
-				r = &validator{r: r}
-			}
-			_, err = io.Copy(w, r)
-
-			if err != nil {
-				if err == errInvalidUTF8 {
-					_ = src.WriteControl(websocket.CloseMessage,
-						websocket.FormatCloseMessage(websocket.CloseInvalidFramePayloadData, ""),
-						time.Time{})
-				}
-				log.Println("Copy:", err)
-				return
-			}
-			err = w.Close()
-			if err != nil {
-				log.Println("Close:", err)
-				return
-			}
-		}
-
-		exit <- struct{}{}
-
-	}(dst, src, exitChan)
+	rproxy.ServeHTTP(w, r)
+	// 所以就不需要以下那么多代码去实现转发了，不过下面的实现应该是可以的。只是现在golang官方标准库有实现
+	//u := url.URL{Scheme: "ws", Host: ip, Path: r.URL.Path}
+	//dst, _, err := websocket.DefaultDialer.Dial(u.String(), nil)
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//
+	//src, err := upgrader.Upgrade(w, r, nil)
+	//
+	//exitChan := make(chan struct{}, 1)
+	//go func() {
+	//	defer func() {
+	//		exitChan <- struct{}{}
+	//	}()
+	//
+	//	for {
+	//		mt, r, err := src.NextReader()
+	//		if err != nil {
+	//			if err != io.EOF {
+	//				log.Println("NextReader:", err)
+	//			}
+	//			return
+	//		}
+	//		if mt == websocket.TextMessage {
+	//			r = &validator{r: r}
+	//		}
+	//		w, err := dst.NextWriter(mt)
+	//		if err != nil {
+	//			log.Println("NextWriter:", err)
+	//			return
+	//		}
+	//		if mt == websocket.TextMessage {
+	//			r = &validator{r: r}
+	//		}
+	//		_, err = io.Copy(w, r)
+	//
+	//		if err != nil {
+	//			if err == errInvalidUTF8 {
+	//				_ = src.WriteControl(websocket.CloseMessage,
+	//					websocket.FormatCloseMessage(websocket.CloseInvalidFramePayloadData, ""),
+	//					time.Time{})
+	//			}
+	//			log.Println("Copy:", err)
+	//			return
+	//		}
+	//		err = w.Close()
+	//		if err != nil {
+	//			log.Println("Close:", err)
+	//			return
+	//		}
+	//	}
+	//}()
+	//
+	//go func() {
+	//	for {
+	//		defer func() {
+	//			exitChan <- struct{}{}
+	//		}()
+	//		mt, r, err := dst.NextReader()
+	//		if err != nil {
+	//			if err != io.EOF {
+	//				log.Println("NextReader:", err)
+	//			}
+	//			return
+	//		}
+	//		if mt == websocket.TextMessage {
+	//			r = &validator{r: r}
+	//		}
+	//		w, err := src.NextWriter(mt)
+	//		if err != nil {
+	//			log.Println("NextWriter:", err)
+	//			return
+	//		}
+	//		if mt == websocket.TextMessage {
+	//			r = &validator{r: r}
+	//		}
+	//		_, err = io.Copy(w, r)
+	//
+	//		if err != nil {
+	//			if err == errInvalidUTF8 {
+	//				_ = src.WriteControl(websocket.CloseMessage,
+	//					websocket.FormatCloseMessage(websocket.CloseInvalidFramePayloadData, ""),
+	//					time.Time{})
+	//			}
+	//			log.Println("Copy:", err)
+	//			return
+	//		}
+	//		err = w.Close()
+	//		if err != nil {
+	//			log.Println("Close:", err)
+	//			return
+	//		}
+	//	}
+	//}()
+	//
+	//<- exitChan
 }
 
 func main() {

@@ -38,7 +38,7 @@ func (this *handle2) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		panic(err)
 	}
-	proxy := httputil.NewSingleHostReverseProxy(remote)
+	proxy := httputil.NewSingleHostReverseProxy(remote) // 这个也可以代理websocket？？？感觉是可以upgrade的
 	//如果代理出错，则转向其他后端服务，并检查这个出错服务是否正常，如果不正常则踢出iplist
 	//proxy.ErrorHandler = func(writer http.ResponseWriter, request *http.Request, e error) {
 	//	robin.Del(addr)
@@ -89,7 +89,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	serviceStart("service1", "http://127.0.0.1:12001")
+	serviceStart("service1", "127.0.0.1:12001")
 	//serviceStart("service2", "http://127.0.0.1:12002")
 	//
 	//for {

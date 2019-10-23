@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7bcea47-c1df-4196-b91e-be8185dc9622" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/consistenthash/consistenthash.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/http/server.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/websocketProxy/discovery/master.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/websocketProxy/discovery/service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/websocketProxy/websocketProxy.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generalPool/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/websocketProxy/websocketProxy_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/discovery/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/discovery/service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/main2.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/main2.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tcpproxy/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/tcpproxy/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/websocket/autobahn.go" beforeDir="false" afterPath="$PROJECT_DIR$/websocket/autobahn.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/websocketProxy/discovery/master.go" beforeDir="false" afterPath="$PROJECT_DIR$/websocketProxy/discovery/master.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/websocketProxy/websocketProxy.go" beforeDir="false" afterPath="$PROJECT_DIR$/websocketProxy/websocketProxy.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,7 +68,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build goTest/websocket">
+  <component name="RunManager" selected="Go Build.go build goTest/websocketProxy">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -91,21 +88,12 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build goTest/http" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build goTest/generalPool" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/http/server.go" />
-      <package value="goTest/http" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build goTest/tcpproxy" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="goTest2" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/tcpproxy/main.go" />
-      <package value="goTest/tcpproxy" />
+      <filePath value="$PROJECT_DIR$/generalPool/main.go" />
+      <package value="goTest/generalPool" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -127,6 +115,17 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
+    <configuration name="TestWebsocketProxy in goTest/websocketProxy" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="goTest2" />
+      <working_directory value="$PROJECT_DIR$/websocketProxy" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="goTest/websocketProxy" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestWebsocketProxy$" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -140,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build goTest/websocket" />
         <item itemvalue="Go Build.go build goTest/websocketProxy" />
+        <item itemvalue="Go Test.TestWebsocketProxy in goTest/websocketProxy" />
         <item itemvalue="Go Build.go build goTest/gateway" />
-        <item itemvalue="Go Build.go build goTest/http" />
-        <item itemvalue="Go Build.go build goTest/tcpproxy" />
+        <item itemvalue="Go Build.go build goTest/generalPool" />
+        <item itemvalue="Go Build.go build goTest/websocket" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +168,8 @@
     <MESSAGE value="websocket 框架melody&#10;为什么有tcp还需要websocket呢？&#10;1,80端口更通用啊，tcp走其他的端口不一样有效；&#10;2，tcp是字节流，websocket是信息流，只要收到肯定是一个完整的信息，而tcp可能收发都可能无法获取完整的信息，需要处理；&#10;3，websocket是与http一样的应用层协议" />
     <MESSAGE value="新增etcd作为服务注册与发现例子&#10;实现了master来watch某个路径下所有服务&#10;service端注册自己的服务，获取一个租约，并keepalive" />
     <MESSAGE value="tcp代理新增连接池的实现&#10;连接池可以根据多个ip来新建多个连接池&#10;也可以根据路由策略获取哪一个连接池" />
-    <option name="LAST_COMMIT_MESSAGE" value="tcp代理新增连接池的实现&#10;连接池可以根据多个ip来新建多个连接池&#10;也可以根据路由策略获取哪一个连接池" />
+    <MESSAGE value="1，新增websocket代理实现，可双向转发&#10;2，服务发现" />
+    <option name="LAST_COMMIT_MESSAGE" value="1，新增websocket代理实现，可双向转发&#10;2，服务发现" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -199,14 +199,19 @@
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/websocketProxy/websocketProxy.go</url>
-          <line>36</line>
-          <option name="timeStamp" value="26" />
+          <url>file://$PROJECT_DIR$/generalPool/main.go</url>
+          <line>13</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/websocketProxy/websocketProxy_test.go</url>
+          <line>47</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/websocketProxy/websocketProxy.go</url>
-          <line>148</line>
-          <option name="timeStamp" value="27" />
+          <line>61</line>
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

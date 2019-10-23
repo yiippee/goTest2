@@ -46,6 +46,8 @@ func echoCopy(w http.ResponseWriter, r *http.Request, writerOnly bool) {
 		log.Println(err)
 		return
 	}
+	defer dst.Close()
+
 	go func() {
 		for {
 			mt, r, err := dst.NextReader()
