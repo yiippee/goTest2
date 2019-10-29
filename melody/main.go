@@ -6,21 +6,40 @@ import (
 	"net/http"
 )
 
-func main() {
-	r := gin.Default()
-	m := melody.New()
+type Server struct {
+	*gin.Engine
+	*melody.Melody
+}
 
-	r.GET("/", func(c *gin.Context) {
+func main() {
+	//r := gin.Default()
+	//m := melody.New()
+	//
+	//r.GET("/", func(c *gin.Context) {
+	//	http.ServeFile(c.Writer, c.Request, "index.html")
+	//})
+	//
+	//r.GET("/ws", func(c *gin.Context) {
+	//	m.HandleRequest(c.Writer, c.Request)
+	//})
+	//
+	//m.HandleMessage(func(s *melody.Session, msg []byte) {
+	//	m.Broadcast(msg)
+	//})
+	//
+	//r.Run(":5000")
+	srv := Server{
+		Engine: gin.Default(),
+		Melody: melody.New(),
+	}
+	srv.GET("/", func(c *gin.Context) {
 		http.ServeFile(c.Writer, c.Request, "index.html")
 	})
-
-	r.GET("/ws", func(c *gin.Context) {
-		m.HandleRequest(c.Writer, c.Request)
+	srv.GET("/ws", func(c *gin.Context) {
+		srv.HandleRequest(c.Writer, c.Request)
 	})
-
-	m.HandleMessage(func(s *melody.Session, msg []byte) {
-		m.Broadcast(msg)
+	srv.HandleMessage(func(s *melody.Session, msg []byte) {
+		srv.Broadcast(msg)
 	})
-
-	r.Run(":5000")
+	srv.Run(":5000")
 }

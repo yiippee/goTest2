@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7bcea47-c1df-4196-b91e-be8185dc9622" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/generalPool/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/websocketProxy/websocketProxy_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/firstNonRepeat.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/es/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fsm/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kcp/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sort/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/discovery/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/discovery/service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/main2.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/main2.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocket/autobahn.go" beforeDir="false" afterPath="$PROJECT_DIR$/websocket/autobahn.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocketProxy/discovery/master.go" beforeDir="false" afterPath="$PROJECT_DIR$/websocketProxy/discovery/master.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/melody/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/melody/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/websocketProxy/websocketProxy.go" beforeDir="false" afterPath="$PROJECT_DIR$/websocketProxy/websocketProxy.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,6 +41,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="GO_FMT" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
@@ -44,7 +49,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/websocketProxy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../melody" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
@@ -68,7 +73,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build goTest/websocketProxy">
+  <component name="RunManager" selected="Go Build.go build goTest/gateway">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -76,6 +81,24 @@
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/" />
       <package value="goTest2" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build goTest/code" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goTest2" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/code/firstNonRepeat.go" />
+      <package value="goTest/code" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build goTest/fsm" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goTest2" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/fsm/main.go" />
+      <package value="goTest/fsm" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -88,42 +111,22 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build goTest/generalPool" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build goTest/melody" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/generalPool/main.go" />
-      <package value="goTest/generalPool" />
+      <filePath value="$PROJECT_DIR$/melody/main.go" />
+      <package value="goTest/melody" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build goTest/websocket" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build goTest/sort" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/websocket/autobahn.go" />
-      <package value="goTest/websocket" />
+      <filePath value="$PROJECT_DIR$/sort/main.go" />
+      <package value="goTest/sort" />
       <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build goTest/websocketProxy" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="goTest2" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/websocketProxy/websocketProxy.go" />
-      <package value="goTest/websocketProxy" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestWebsocketProxy in goTest/websocketProxy" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="goTest2" />
-      <working_directory value="$PROJECT_DIR$/websocketProxy" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="goTest/websocketProxy" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestWebsocketProxy$" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
@@ -139,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build goTest/websocketProxy" />
-        <item itemvalue="Go Test.TestWebsocketProxy in goTest/websocketProxy" />
         <item itemvalue="Go Build.go build goTest/gateway" />
-        <item itemvalue="Go Build.go build goTest/generalPool" />
-        <item itemvalue="Go Build.go build goTest/websocket" />
+        <item itemvalue="Go Build.go build goTest/fsm" />
+        <item itemvalue="Go Build.go build goTest/sort" />
+        <item itemvalue="Go Build.go build goTest/code" />
+        <item itemvalue="Go Build.go build goTest/melody" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +172,8 @@
     <MESSAGE value="新增etcd作为服务注册与发现例子&#10;实现了master来watch某个路径下所有服务&#10;service端注册自己的服务，获取一个租约，并keepalive" />
     <MESSAGE value="tcp代理新增连接池的实现&#10;连接池可以根据多个ip来新建多个连接池&#10;也可以根据路由策略获取哪一个连接池" />
     <MESSAGE value="1，新增websocket代理实现，可双向转发&#10;2，服务发现" />
-    <option name="LAST_COMMIT_MESSAGE" value="1，新增websocket代理实现，可双向转发&#10;2，服务发现" />
+    <MESSAGE value="1，golang标准库有websocket转发啊&#10;2，NewSingleHostReverseProxy 先是通过http&#10;协议进行握手，然后再ws通信" />
+    <option name="LAST_COMMIT_MESSAGE" value="1，golang标准库有websocket转发啊&#10;2，NewSingleHostReverseProxy 先是通过http&#10;协议进行握手，然后再ws通信" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -178,11 +182,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/mongodb/main.go</url>
-          <line>18</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/mongodb/main.go</url>
           <line>97</line>
@@ -199,11 +198,6 @@
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/generalPool/main.go</url>
-          <line>13</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/websocketProxy/websocketProxy_test.go</url>
           <line>47</line>
           <option name="timeStamp" value="33" />
@@ -212,6 +206,16 @@
           <url>file://$PROJECT_DIR$/websocketProxy/websocketProxy.go</url>
           <line>61</line>
           <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/es/main.go</url>
+          <line>213</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/fsm/main.go</url>
+          <line>81</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

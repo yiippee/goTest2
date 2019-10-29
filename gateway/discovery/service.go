@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"github.com/coreos/etcd/clientv3"
 	"log"
 	"net/http"
@@ -50,8 +51,25 @@ func (s *Service) Start() error {
 	}()
 	// 开启自己的服务
 	mux := http.NewServeMux()
-	mux.HandleFunc("/test", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/v1/test", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("hello,world."))
+	})
+	mux.HandleFunc("/listKeys", func(w http.ResponseWriter, r *http.Request) {
+		config := clientv3.Config{
+			Endpoints:   []string{"127.0.0.1:2379"},
+			DialTimeout: time.Duration(1000) * time.Millisecond,
+		}
+		var client *clientv3.Client
+		var err error
+		if client, err = clientv3.New(config); err != nil {
+			return
+		}
+		kv := clientv3.NewKV(client)
+		if getResp, err := kv.Get(context.TODO(), "services/", clientv3.WithPrefix()); err != nil {
+			return
+		} else {
+			fmt.Println(getResp.Kvs)
+		}
 	})
 	go http.ListenAndServe(s.Info.IP, mux)
 

@@ -60,7 +60,7 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	ip := "http://127.0.0.1:8080" // "ws://127.0.0.1:8080"
 
 	backURL, _ := url.Parse(ip)
-	rproxy := httputil.NewSingleHostReverseProxy(backURL)
+	rproxy := httputil.NewSingleHostReverseProxy(backURL) // 这一块感觉不需要池化
 
 	rproxy.ServeHTTP(w, r)
 	// 所以就不需要以下那么多代码去实现转发了，不过下面的实现应该是可以的。只是现在golang官方标准库有实现

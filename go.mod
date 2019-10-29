@@ -21,14 +21,23 @@ require (
 	github.com/grpc-ecosystem/go-grpc-middleware v1.1.0 // indirect
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway v1.11.3 // indirect
+	github.com/itfantasy/gonode v0.0.0-20191022090118-359a2ae7228e
 	github.com/jonboulle/clockwork v0.1.0 // indirect
+	github.com/klauspost/cpuid v1.2.1 // indirect
+	github.com/klauspost/reedsolomon v1.9.3 // indirect
 	github.com/prometheus/client_golang v1.1.0 // indirect
 	github.com/pyloque/gocaptain v0.0.0-20160623031443-8e6a4933f710
 	github.com/rakyll/statik v0.1.6
 	github.com/silenceper/pool v0.0.0-20190419103246-92cc9e6ec7b8
+	github.com/smallnest/gofsm v0.0.0-20190306032117-f5ba1bddca7b
 	github.com/soheilhy/cmux v0.1.4 // indirect
+	github.com/templexxx/cpufeat v0.0.0-20180724012125-cef66df7f161 // indirect
+	github.com/templexxx/xor v0.0.0-20181023030647-4e92f724b73b // indirect
+	github.com/tjfoc/gmsm v1.0.1 // indirect
 	github.com/tmc/grpc-websocket-proxy v0.0.0-20190109142713-0ad062ec5ee5 // indirect
 	github.com/xiang90/probing v0.0.0-20190116061207-43a291ad63a2 // indirect
+	github.com/xtaci/kcp-go v5.4.11+incompatible
+	github.com/xtaci/lossyconn v0.0.0-20190602105132-8df528c0c9ae // indirect
 	go.etcd.io/bbolt v1.3.3 // indirect
 	go.etcd.io/etcd v3.3.15+incompatible
 	go.uber.org/multierr v1.2.0 // indirect
@@ -39,4 +48,5 @@ require (
 	google.golang.org/grpc v1.24.0 // indirect
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 	gopkg.in/olahol/melody.v1 v1.0.0-20170518105555-d52139073376
+	gopkg.in/olivere/elastic.v5 v5.0.82
 )
