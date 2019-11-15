@@ -79,6 +79,7 @@ func main() {
 	}
 	fsm := initFSM()
 
+	// 根据当前的状态以及触发事件，找到匹配的规则
 	err := fsm.Trigger(p.CurrentState, EVENT_CATCH_ORDER, p)
 	if err != nil {
 		log.Println("trigger err: %v", err)

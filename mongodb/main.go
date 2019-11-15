@@ -17,6 +17,24 @@ type User struct {
 	Interests []string      `bson:"interests"`
 }
 
+type Student struct {
+	Id    bson.ObjectId `bson:"_id"`
+	Sname string        `bson:"sname"`
+	Sage  int           `bson:"sage"`
+	Score float64       `bson:"score"`
+	Records []Record    `bson:"records"`
+	Time  time.Time     `bson:"time"`
+}
+type Record struct {
+	A int `bson:"a"`
+	B int `bson:"b"`
+	C string `bson:"c"`
+}
+
+type WriteConcern struct {
+	W int `bson:"w"`
+}
+
 const URL string = "127.0.0.1:27017"
 
 var c *mgo.Collection
@@ -31,7 +49,45 @@ func init() {
 	//切换到数据库
 	db := session.DB("blog")
 	//切换到collection
-	c = db.C("mgotest")
+	c = db.C("student")
+}
+func myFind() {
+	//    defer session.Close()
+	var stu []Student
+	c.Find(bson.M{"sname": "lisi"}).All(&stu)
+	//for _, value := range stu {
+	//	fmt.Println(value)
+	//}
+	////根据ObjectId进行查询
+	//idStr := stu[0].Id
+	//objectId := idStr
+	//user := new(Student)
+	//c.Find(bson.M{"_id": objectId}).One(user)
+	//fmt.Println(user)
+}
+
+func myInsert() {
+	stu := Student{
+		Id: bson.NewObjectId(),
+		Sname: "lizhanbin",
+		Sage:  31,
+		Score: 100,
+		Time: time.Now(),
+		Records: []Record{
+			{1,2,"12"},
+			{3, 4, "34"},
+			{5, 6, "56"},
+		},
+	}
+	err := c.Insert(stu)
+	if err == nil {
+		fmt.Println("插入成功")
+	} else {
+		fmt.Println(err.Error())
+		defer panic(err)
+	}
+
+	// c.Upsert()
 }
 
 //新增数据
@@ -95,6 +151,9 @@ func del() {
 	}
 }
 func main() {
+	myFind()
+	myInsert()
+	return
 	add()
 	find()
 	update()

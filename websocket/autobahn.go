@@ -224,7 +224,7 @@ func serveHome(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, "<html><body>Echo Server</body></html>")
 }
 
-var addr = flag.String("addr", ":8080", "http service address")
+var addr = flag.String("addr", ":3344", "http service address")
 
 func main() {
 	flag.Parse()

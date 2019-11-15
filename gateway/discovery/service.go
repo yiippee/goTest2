@@ -54,7 +54,7 @@ func (s *Service) Start() error {
 	mux.HandleFunc("/v1/test", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("hello,world."))
 	})
-	mux.HandleFunc("/listKeys", func(w http.ResponseWriter, r *http.Request) {
+	mux.HandleFunc("/v1/listKeys", func(w http.ResponseWriter, r *http.Request) {
 		config := clientv3.Config{
 			Endpoints:   []string{"127.0.0.1:2379"},
 			DialTimeout: time.Duration(1000) * time.Millisecond,
@@ -66,9 +66,11 @@ func (s *Service) Start() error {
 		}
 		kv := clientv3.NewKV(client)
 		if getResp, err := kv.Get(context.TODO(), "services/", clientv3.WithPrefix()); err != nil {
+			fmt.Fprintf(w, "no keys")
 			return
 		} else {
 			fmt.Println(getResp.Kvs)
+			fmt.Fprintln(w, getResp.Kvs)
 		}
 	})
 	go http.ListenAndServe(s.Info.IP, mux)

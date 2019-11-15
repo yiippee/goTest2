@@ -62,17 +62,17 @@ func startServer2(m *dis.Master) {
 	v1 := r.Group("/v1") // 所有以v1开头的，全部路由到这里。可以动态增加吗？
 	{
 		v1.GET("/*key", func(c *gin.Context) {
-			v2 := r.Group("/v2")
-			{
-				v2.GET("/*key", func(c *gin.Context) {
-					fmt.Fprintf(c.Writer, "%s", "this is v2.")
-				})
-			}
-
-			fmt.Fprintf(c.Writer, "%s", "hello world group.")
+			//v2 := r.Group("/v2")
+			//{
+			//	v2.GET("/*key", func(c *gin.Context) {
+			//		fmt.Fprintf(c.Writer, "%s", "this is v2.")
+			//	})
+			//}
+			//
+			//fmt.Fprintf(c.Writer, "%s", "hello world group.")
 			// 选择后端服务器策略
 
-			remote, err := url.Parse("http://" + "127.0.0.1:12001")
+			remote, err := url.Parse("http://" + "127.0.0.1:12003")
 			if err != nil {
 				panic(err)
 			}
@@ -129,7 +129,7 @@ func main() {
 	}
 
 	// 启动具体的服务
-	serviceStart("service1", "127.0.0.1:12001")
+	serviceStart("service1", "127.0.0.1:12003")
 	//serviceStart("service2", "http://127.0.0.1:12002")
 	//
 	//for {
