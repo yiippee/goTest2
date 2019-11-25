@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	dis "goTest/gateway/discovery"
+	dis "goTest2/gateway/discovery"
 	"log"
 	"math/rand"
 	"net/http"
@@ -79,7 +79,7 @@ func startServer2(m *dis.Master) {
 
 			// NewSingleHostReverseProxy 需要池化吗？ 感觉不需要，NewSingleHostReverseProxy也没做多少事
 			// 虽然每一次都需要重新创建。但是又感觉可以池化啊
-			proxy := httputil.NewSingleHostReverseProxy(remote) // 这个也可以代理websocket？？？感觉是可以upgrade的
+			proxy := NewSingleHostReverseProxy(remote) // 这个也可以代理websocket？？？感觉是可以upgrade的
 			//如果代理出错，则转向其他后端服务，并检查这个出错服务是否正常，如果不正常则踢出iplist
 			//proxy.ErrorHandler = func(writer http.ResponseWriter, request *http.Request, e error) {
 			//	robin.Del(addr)

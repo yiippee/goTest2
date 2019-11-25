@@ -5,6 +5,7 @@ go 1.12
 require (
 	github.com/Shopify/sarama v1.24.1
 	github.com/coreos/etcd v3.3.17+incompatible
+	github.com/didip/tollbooth v4.0.2+incompatible
 	github.com/fatih/pool v3.0.0+incompatible
 	github.com/funny/link v0.0.0-20190805113223-98708916287b
 	github.com/funny/utest v0.0.0-20161029064919-43870a374500 // indirect
@@ -12,6 +13,7 @@ require (
 	github.com/gogo/protobuf v1.3.0 // indirect
 	github.com/golang/protobuf v1.3.2
 	github.com/google/btree v1.0.0 // indirect
+	github.com/gorilla/mux v1.7.3
 	github.com/gorilla/websocket v1.4.1
 	github.com/grpc-ecosystem/grpc-gateway v1.11.3 // indirect
 	github.com/hashicorp/consul/api v1.3.0
@@ -22,6 +24,7 @@ require (
 	github.com/micro/go-micro v1.16.0
 	github.com/mkevac/debugcharts v0.0.0-20180124214838-d3203a8fa926 // indirect
 	github.com/nareix/joy4 v0.0.0-20181022032202-3ddbc8f9d431
+	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/pyloque/gocaptain v0.0.0-20160623031443-8e6a4933f710
 	github.com/rakyll/statik v0.1.6
 	github.com/silenceper/pool v0.0.0-20190419103246-92cc9e6ec7b8

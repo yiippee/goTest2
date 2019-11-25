@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -11,10 +13,18 @@ func main() {
 	s.Add([]byte("name"), []byte("lzb"))
 	s.Add([]byte("name"), []byte("zsm"))
 
-
 	mux := http.NewServeMux()
 	mux.HandleFunc("/test/111", Test)
 	mux.HandleFunc("/test2/", Test2)
+	mux.HandleFunc("/image", func(w http.ResponseWriter, r *http.Request) {
+		file, err := os.Open("E:\\lzb\\golang\\src\\goTest2\\http\\123.png")
+		if err != nil {
+			fmt.Println(err)
+		}
+		defer file.Close()
+		buff, err := ioutil.ReadAll(file)
+		w.Write(buff)
+	})
 
 	mux2 := http.NewServeMux()
 	mux2.HandleFunc("/test/222", func(w http.ResponseWriter, r *http.Request) {
@@ -30,13 +40,13 @@ func main() {
 }
 
 func Test(w http.ResponseWriter, r *http.Request) {
-	time.Sleep(2*time.Millisecond)
+	time.Sleep(2 * time.Millisecond)
 	fmt.Println("test...")
 	fmt.Fprintf(w, "%s", "hello,world.")
 }
 
 func Test2(w http.ResponseWriter, r *http.Request) {
-	time.Sleep(2*time.Millisecond)
+	time.Sleep(2 * time.Millisecond)
 	fmt.Println("test...")
 	fmt.Fprintf(w, "%s", "test2")
 }

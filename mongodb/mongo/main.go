@@ -13,13 +13,74 @@ import (
 	"time"
 )
 
-func main() {
+func Image() {
 	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://localhost:27017"))
 	if err != nil {
 		panic(err)
 	}
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
 	err = client.Connect(ctx)
+
+	coll := client.Database("blog").Collection("images")
+
+	{
+		// Start Example 1
+
+		result, err := coll.InsertOne(
+			context.Background(),
+			bson.D{
+				{"planeID", "123456"},
+				{"lat", 22.6},
+				{"long", 116.8},
+				{"info", bson.D{
+					{"imageUrl", "./Images/123.jpg"},
+					{"h", 28},
+					{"w", 35.5},
+					{"uom", "cm"},
+				}},
+			})
+		if err != nil {
+			panic(err)
+		}
+		fmt.Println(result.InsertedID)
+		//
+		cursor, err := coll.Find(context.Background(),
+			bson.D{{"planeID", "123456"}})
+
+		for cursor.Next(context.Background()) {
+			var result bson.M
+			err := cursor.Decode(&result)
+			if err != nil {
+				log.Fatal(err)
+			}
+			fmt.Println(result)
+		}
+	}
+}
+func main() {
+	Image()
+	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://localhost:27017"))
+	if err != nil {
+		panic(err)
+	}
+	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
+	err = client.Connect(ctx)
+	// export excel test
+	//coll := client.Database("excel").Collection("stock")
+	//result, err := coll.InsertOne(
+	//	context.Background(),
+	//	bson.D{
+	//		{"item", "canvas"},
+	//		{"qty", 100},
+	//		{"tags", bson.A{"cotton"}},
+	//		{"size", bson.D{
+	//			{"h", 28},
+	//			{"w", 35.5},
+	//			{"uom", "cm"},
+	//		}},
+	//	})
+
+	//
 	db := client.Database("myTest")
 	t := new(testing.T)
 
@@ -409,7 +470,7 @@ func UpdateExamples(t *testing.T, db *mongo.Database) {
 					{"uom", "in"},
 				}},
 				{"status", "D"},
-				{"array", bson.A{1,2,3}},
+				{"array", bson.A{1, 2, 3}},
 			},
 			bson.D{
 				{"item", "planner"},
@@ -486,8 +547,8 @@ func UpdateExamples(t *testing.T, db *mongo.Database) {
 			bson.D{
 				{"item", "paper"},
 			},
-			bson.D{  // bson.D 代表一个对象， bson.A 代表一个数组
-				{"$push", bson.D{{"array", bson.D{{"$each", bson.A{4,5,6}}}}}},
+			bson.D{ // bson.D 代表一个对象， bson.A 代表一个数组
+				{"$push", bson.D{{"array", bson.D{{"$each", bson.A{4, 5, 6}}}}}},
 				{"$currentDate", bson.D{
 					{"lastModified", true},
 				}},

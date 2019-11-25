@@ -2,34 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a69529d0-a970-4412-b5f3-dd76f8df6003" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/consul/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kafka/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/micro/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/micro/proto/greeter.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mod-replace/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mod-replace/replace/replace.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mongodb/benchmark_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mongodb/mongo/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pprof/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/benchmark_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/http/benchmark_main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/http/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/mp4/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tx/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/websocketProxy/another/websocketProxy.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/websocketProxy/another/websocketProxy_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/goTest2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/goTest2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway/reverse_proxy.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/http/proxy/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ratelimit/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/websocket/image/123.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/websocket/image/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fsm/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/fsm/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/discovery/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/discovery/service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/main2.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/main2.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/http/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/http/server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mongodb/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/mongodb/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocket/autobahn.go" beforeDir="false" afterPath="$PROJECT_DIR$/websocket/autobahn.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mongodb/mongo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/mongodb/mongo/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -61,8 +44,13 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/websocket/image" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\lzb\golang\src\goTest2\websocket\image" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -76,29 +64,59 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build goTest2/mod-replace">
-    <configuration name="go build goTest2/micro" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build goTest2/websocket/image">
+    <configuration name="go build goTest2/gateway" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/micro/main.go" />
-      <package value="goTest2/micro" />
+      <filePath value="$PROJECT_DIR$/gateway/main2.go" />
+      <package value="goTest2/gateway" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build goTest2/mod-replace" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build goTest2/http" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/mod-replace/main.go" />
-      <package value="goTest2/mod-replace" />
+      <filePath value="$PROJECT_DIR$/http/server.go" />
+      <package value="goTest2/http" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build goTest2/mongodb/mongo" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goTest2" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/mongodb/mongo/main.go" />
+      <package value="goTest2/mongodb/mongo" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build goTest2/ratelimit" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goTest2" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/ratelimit/main.go" />
+      <package value="goTest2/ratelimit" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build goTest2/websocket/image" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goTest2" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/websocket/image/main.go" />
+      <package value="goTest2/websocket/image" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build goTest2/mod-replace" />
-        <item itemvalue="Go Build.go build goTest2/micro" />
+        <item itemvalue="Go Build.go build goTest2/websocket/image" />
+        <item itemvalue="Go Build.go build goTest2/http" />
+        <item itemvalue="Go Build.go build goTest2/mongodb/mongo" />
+        <item itemvalue="Go Build.go build goTest2/ratelimit" />
+        <item itemvalue="Go Build.go build goTest2/gateway" />
       </list>
     </recent_temporary>
   </component>
@@ -134,6 +152,31 @@
           <url>file://$PROJECT_DIR$/mod-replace/main.go</url>
           <line>8</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/mongodb/mongo/main.go</url>
+          <line>27</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/http/server.go</url>
+          <line>20</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/websocket/image/main.go</url>
+          <line>83</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/websocket/image/main.go</url>
+          <line>59</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://C:/Go/src/io/io.go</url>
+          <line>417</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
