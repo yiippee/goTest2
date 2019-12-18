@@ -13,22 +13,64 @@ import (
 	"time"
 )
 
+type Info struct {
+	Id   int64
+	Time time.Time
+	Lat  float64
+	Long float64
+	info string
+}
+
 func Image() {
-	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://localhost:27017"))
+	// client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://172.20.200.17:40000"))
+	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://127.0.0.1:27017"))
 	if err != nil {
 		panic(err)
 	}
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
 	err = client.Connect(ctx)
 
-	coll := client.Database("blog").Collection("images")
+	coll := client.Database("test").Collection("log")
 
+	{
+		// 插入结构体测试
+		info := Info{
+			Id:   999,
+			Time: time.Now(),
+			Lat:  23.33,
+			Long: 116.43,
+			info: "test",
+		}
+
+		result, err := coll.InsertOne(context.Background(), info) // 可直接orm
+
+		if err != nil {
+			panic(err)
+		}
+		fmt.Println(result.InsertedID)
+		//
+		info2 := Info{
+			Id: 999,
+		}
+		cursor, err := coll.Find(context.Background(), info2)
+
+		for cursor.Next(context.Background()) {
+			var result bson.M
+			err := cursor.Decode(&result)
+			if err != nil {
+				log.Fatal(err)
+			}
+			fmt.Println(result)
+		}
+	}
 	{
 		// Start Example 1
 
 		result, err := coll.InsertOne(
 			context.Background(),
 			bson.D{
+				{"id", 3333333333333},
+				{"time", 24345354},
 				{"planeID", "123456"},
 				{"lat", 22.6},
 				{"long", 116.8},
@@ -36,7 +78,10 @@ func Image() {
 					{"imageUrl", "./Images/123.jpg"},
 					{"h", 28},
 					{"w", 35.5},
-					{"uom", "cm"},
+					{"point", bson.D{
+						{"x", 123},
+						{"y", 456},
+					}},
 				}},
 			})
 		if err != nil {

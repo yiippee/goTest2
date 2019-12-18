@@ -6,6 +6,7 @@ require (
 	github.com/Shopify/sarama v1.24.1
 	github.com/coreos/etcd v3.3.17+incompatible
 	github.com/didip/tollbooth v4.0.2+incompatible
+	github.com/didip/tollbooth_gin v0.0.0-20170928041415-5752492be505
 	github.com/fatih/pool v3.0.0+incompatible
 	github.com/funny/link v0.0.0-20190805113223-98708916287b
 	github.com/funny/utest v0.0.0-20161029064919-43870a374500 // indirect
@@ -18,12 +19,15 @@ require (
 	github.com/grpc-ecosystem/grpc-gateway v1.11.3 // indirect
 	github.com/hashicorp/consul/api v1.3.0
 	github.com/itfantasy/gonode v0.0.0-20191022090118-359a2ae7228e
+	github.com/juju/ratelimit v1.0.1 // indirect
+	github.com/julianshen/gin-limiter v0.0.0-20161123033831-fc39b5e90fe7
 	github.com/klauspost/cpuid v1.2.1 // indirect
 	github.com/klauspost/reedsolomon v1.9.3 // indirect
 	github.com/lzb/replace v0.0.0-00010101000000-000000000000
 	github.com/micro/go-micro v1.16.0
 	github.com/mkevac/debugcharts v0.0.0-20180124214838-d3203a8fa926 // indirect
 	github.com/nareix/joy4 v0.0.0-20181022032202-3ddbc8f9d431
+	github.com/opentracing/opentracing-go v1.1.0
 	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/pyloque/gocaptain v0.0.0-20160623031443-8e6a4933f710
 	github.com/rakyll/statik v0.1.6
@@ -37,9 +41,10 @@ require (
 	github.com/unrolled/secure v1.0.4
 	github.com/xtaci/kcp-go v5.4.11+incompatible
 	github.com/xtaci/lossyconn v0.0.0-20190602105132-8df528c0c9ae // indirect
-	go.etcd.io/etcd v3.3.15+incompatible
+	go.etcd.io/etcd v3.3.15+incompatible // indirect
 	go.mongodb.org/mongo-driver v1.1.2
 	golang.org/x/net v0.0.0-20191011234655-491137f69257
+	golang.org/x/time v0.0.0-20190921001708-c4c64cad1fd0
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 	gopkg.in/olahol/melody.v1 v1.0.0-20170518105555-d52139073376
 	gopkg.in/olivere/elastic.v5 v5.0.82

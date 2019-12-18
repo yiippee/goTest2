@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/didip/tollbooth"
+	"github.com/didip/tollbooth_gin"
 	"github.com/gin-gonic/gin"
 	dis "goTest2/gateway/discovery"
 	"log"
@@ -50,18 +52,34 @@ func (this *handle2) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	proxy.ServeHTTP(w, r)
 }
 
+//func LimitHandler(lmt *limiter.Limiter) gin.HandlerFunc {
+//	return func(c *gin.Context) {
+//		httpError := tollbooth.LimitByRequest(lmt, c.Writer, c.Request)
+//		if httpError != nil {
+//			c.Data(httpError.StatusCode, lmt.GetMessageContentType(), []byte(httpError.Message))
+//			c.Abort()
+//		} else {
+//			c.Next()
+//		}
+//	}
+//}
+
 func startServer2(m *dis.Master) {
 	// 被代理的服务器host和port
 	h := &handle2{m}
 
 	r := gin.New()
+
+	// Create a limiter struct.
+	limiter := tollbooth.NewLimiter(1, nil)
+
 	r.GET("/ws", func(c *gin.Context) {
 		fmt.Fprintf(c.Writer, "%s", "hello world.")
 	})
 
 	v1 := r.Group("/v1") // 所有以v1开头的，全部路由到这里。可以动态增加吗？
 	{
-		v1.GET("/*key", func(c *gin.Context) {
+		v1.GET("/*key", tollbooth_gin.LimitHandler(limiter), func(c *gin.Context) {
 			//v2 := r.Group("/v2")
 			//{
 			//	v2.GET("/*key", func(c *gin.Context) {

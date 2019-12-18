@@ -2,19 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a69529d0-a970-4412-b5f3-dd76f8df6003" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gateway/reverse_proxy.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/http/proxy/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ratelimit/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/websocket/image/123.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/websocket/image/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OpenTracing/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ratelimit/rate/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consul/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/consul/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/etcd/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/etcd/client.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gateway/main2.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/main2.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/http/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/http/server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mongodb/mongo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/mongodb/mongo/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ratelimit/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimit/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/websocketProxy/websocketProxy.go" beforeDir="false" afterPath="$PROJECT_DIR$/websocketProxy/websocketProxy.go" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,8 +34,14 @@
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="1TdTblhfAxpUwZLiSyTO0UjJnIs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
@@ -44,7 +49,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/websocket/image" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../etcd" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
@@ -52,34 +57,22 @@
       <recent name="E:\lzb\golang\src\goTest2\websocket\image" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Go Build.go build goTest2/websocket/image">
+  <component name="RunManager" selected="Go Build.go build goTest2/etcd">
+    <configuration name="go build goTest2/etcd" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goTest2" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/etcd/client.go" />
+      <package value="goTest2/etcd" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <configuration name="go build goTest2/gateway" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
       <filePath value="$PROJECT_DIR$/gateway/main2.go" />
       <package value="goTest2/gateway" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build goTest2/http" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="goTest2" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/http/server.go" />
-      <package value="goTest2/http" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -101,24 +94,36 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
-    <configuration name="go build goTest2/websocket/image" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build goTest2/ratelimit/rate" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/websocket/image/main.go" />
-      <package value="goTest2/websocket/image" />
+      <filePath value="$PROJECT_DIR$/ratelimit/rate/main.go" />
+      <package value="goTest2/ratelimit/rate" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build goTest2/websocket/image" />
-        <item itemvalue="Go Build.go build goTest2/http" />
-        <item itemvalue="Go Build.go build goTest2/mongodb/mongo" />
+        <item itemvalue="Go Build.go build goTest2/etcd" />
+        <item itemvalue="Go Build.go build goTest2/ratelimit/rate" />
         <item itemvalue="Go Build.go build goTest2/ratelimit" />
         <item itemvalue="Go Build.go build goTest2/gateway" />
+        <item itemvalue="Go Build.go build goTest2/mongodb/mongo" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -136,9 +141,59 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="新增websocket传输图片例子" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增websocket传输图片例子" />
+  </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
-    <proxy>https://goproxy.io</proxy>
+    <proxy>https://mirrors.aliyun.com/goproxy/</proxy>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1576640484704">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640484704" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1576640484704">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640484704" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1576640484704">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640484704" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1576640484704">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640484704" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1576640484705">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640484705" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1576640484705">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640484705" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1576640484705">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640484705" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1576640484705">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640484705" />
+    <state x="461" y="167" key="SettingsEditor" timestamp="1575541201206">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="167" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1575541201206" />
+    <state width="968" height="533" key="XDebugger.FullValuePopup" timestamp="1576639599721">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="968" height="533" key="XDebugger.FullValuePopup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576639599721" />
+    <state x="636" y="263" width="647" height="524" key="find.popup" timestamp="1576640634660">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="636" y="263" width="647" height="524" key="find.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640634660" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -154,29 +209,39 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/mongodb/mongo/main.go</url>
-          <line>27</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/http/server.go</url>
-          <line>20</line>
+          <line>19</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/websocket/image/main.go</url>
-          <line>83</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/mongodb/mongo/main.go</url>
+          <line>43</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://$PROJECT_DIR$/websocket/image/main.go</url>
-          <line>59</line>
+          <url>file://$PROJECT_DIR$/consul/main.go</url>
+          <line>61</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/gateway/main2.go</url>
+          <line>140</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/gateway/main2.go</url>
+          <line>108</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
-          <url>file://C:/Go/src/io/io.go</url>
-          <line>417</line>
+          <url>file://$PROJECT_DIR$/etcd/client.go</url>
+          <line>21</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/etcd/client.go</url>
+          <line>40</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

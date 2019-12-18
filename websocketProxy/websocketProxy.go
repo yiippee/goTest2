@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/fatih/pool"
 	"github.com/gorilla/websocket"
-	"goTest/websocketProxy/discovery"
+	"goTest2/websocketProxy/discovery"
 	"io"
 	"log"
 	"net/http"

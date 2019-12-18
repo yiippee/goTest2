@@ -73,7 +73,7 @@ func main() {
 	}()
 	go http.ListenAndServe(":8080", nil)
 
-	time.Sleep(3*time.Second)
+	time.Sleep(3 * time.Second)
 
 	go register()
 	for {
@@ -97,10 +97,9 @@ func register() {
 		Tags: []string{"SERVER2"},
 		Port: 8080,
 		Check: &consulApi.AgentServiceCheck{
-			HTTP: "https://localhost:5000/health",
+			HTTP:     "https://localhost:5000/health",
 			Interval: "10s",
-			Timeout: "15s",
-			TTL: "30s",
+			Timeout:  "15s",
 		},
 	})
 	if err != nil {
