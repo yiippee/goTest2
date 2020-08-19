@@ -1,3 +1,3 @@
-module replace
+module replacetest
 
 go 1.13

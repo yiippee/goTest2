@@ -11,13 +11,11 @@ require (
 	github.com/funny/link v0.0.0-20190805113223-98708916287b
 	github.com/funny/utest v0.0.0-20161029064919-43870a374500 // indirect
 	github.com/gin-gonic/gin v1.4.0
-	github.com/gogo/protobuf v1.3.0 // indirect
-	github.com/golang/protobuf v1.3.2
+	github.com/golang/protobuf v1.4.2
 	github.com/google/btree v1.0.0 // indirect
 	github.com/gorilla/mux v1.7.3
 	github.com/gorilla/websocket v1.4.1
-	github.com/grpc-ecosystem/grpc-gateway v1.11.3 // indirect
-	github.com/hashicorp/consul/api v1.3.0
+	github.com/hashicorp/consul/api v1.5.0
 	github.com/itfantasy/gonode v0.0.0-20191022090118-359a2ae7228e
 	github.com/juju/ratelimit v1.0.1 // indirect
 	github.com/julianshen/gin-limiter v0.0.0-20161123033831-fc39b5e90fe7
@@ -27,13 +25,15 @@ require (
 	github.com/micro/go-micro v1.16.0
 	github.com/mkevac/debugcharts v0.0.0-20180124214838-d3203a8fa926 // indirect
 	github.com/nareix/joy4 v0.0.0-20181022032202-3ddbc8f9d431
-	github.com/opentracing/opentracing-go v1.1.0
+	github.com/opentracing/opentracing-go v1.2.0
 	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
+	github.com/prometheus/prometheus v1.8.2-0.20200819073411-9438bf735a1e
+	github.com/prometheus/tsdb v0.10.0 // indirect
 	github.com/pyloque/gocaptain v0.0.0-20160623031443-8e6a4933f710
 	github.com/rakyll/statik v0.1.6
 	github.com/silenceper/pool v0.0.0-20190419103246-92cc9e6ec7b8
 	github.com/smallnest/gofsm v0.0.0-20190306032117-f5ba1bddca7b
-	github.com/stretchr/testify v1.4.0
+	github.com/stretchr/testify v1.5.1
 	github.com/templexxx/cpufeat v0.0.0-20180724012125-cef66df7f161 // indirect
 	github.com/templexxx/xor v0.0.0-20181023030647-4e92f724b73b // indirect
 	github.com/tidwall/pretty v1.0.0 // indirect
@@ -42,12 +42,12 @@ require (
 	github.com/xtaci/kcp-go v5.4.11+incompatible
 	github.com/xtaci/lossyconn v0.0.0-20190602105132-8df528c0c9ae // indirect
 	go.etcd.io/etcd v3.3.15+incompatible // indirect
-	go.mongodb.org/mongo-driver v1.1.2
-	golang.org/x/net v0.0.0-20191011234655-491137f69257
-	golang.org/x/time v0.0.0-20190921001708-c4c64cad1fd0
+	go.mongodb.org/mongo-driver v1.3.2
+	golang.org/x/net v0.0.0-20200707034311-ab3426394381
+	golang.org/x/time v0.0.0-20200630173020-3af7569d3a1e
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 	gopkg.in/olahol/melody.v1 v1.0.0-20170518105555-d52139073376
 	gopkg.in/olivere/elastic.v5 v5.0.82
 )
 
-replace github.com/lzb/replace => E:\lzb\golang\src\goTest2\mod-replace\replace
+replace github.com/lzb/replace => ./mod-replace/replace

@@ -55,10 +55,10 @@ func handle(sconn net.Conn) {
 
 	// 选择需要连接的服务器ip,这里可以做一些路由策略
 	// todo 这里考虑根据路由策略，获取哪一个连接池来获取具体的连接。具体的策略可以考虑一致性hash算法，待验证
-	ip, ok := getIP(sconn)
-	if !ok {
-		return
-	}
+	//ip, ok := getIP(sconn)
+	//if !ok {
+	//	return
+	//}
 
 	// 此处可以设置一个连接池来优化
 	// dconn, err := net.Dial("tcp", ip)
@@ -141,6 +141,7 @@ func Copy(dst io.Writer, src io.Reader) (written int64, err error) {
 	for {
 		nr, er := src.Read(buf)
 		if nr > 0 {
+			fmt.Println(string(buf[:nr]))
 			nw, ew := dst.Write(buf[0:nr])
 			if nw > 0 {
 				written += int64(nw)
@@ -179,7 +180,7 @@ func init() {
 	// 如果服务器是有状态的，则很有效，因为可以明确定位到某一台服务器，虽然采用普通的hash算法也可以定位，但是
 	// 一致性hash算法在服务器节点变动时，可以达到 1 / (n+1) 的修改操作。
 	// 再结合虚拟节点，可以达到平衡性，虚拟节点的存在只是多了一个虚拟节点到实体节点的映射过程。
-	factory := func() (net.Conn, error) { return net.Dial("tcp", "127.0.0.1:1789") }
+	factory := func() (net.Conn, error) { return net.Dial("tcp", "127.0.0.1:6379") }
 
 	// create a new channel based pool with an initial capacity of 5 and maximum
 	// capacity of 30. The factory will create 5 initial connections and put it
