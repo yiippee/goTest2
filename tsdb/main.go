@@ -13,7 +13,7 @@ import (
 )
 
 func query2(db *tsdb.DB) {
-	querier, err := db.Querier(context.TODO(), 0, time.Now().Unix()+100)
+	querier, err := db.Querier(context.TODO(), 0, time.Now().Unix()+10000)
 	if err != nil {
 		panic(err)
 	}
@@ -49,6 +49,9 @@ func main() {
 			// 这个与mysql也是一样的，因为mysql有实现定义好了的schema，所以不需要判定表是否存在等各种情况。
 			// 但是tsdb不需要用户定义schema，自己会自动判断是否需要新建，所以这个地方可以优化，也就是有 AddFast 这个方法了。
 			// prometheus对如何定义和使用这个缓存有很好的实例，参考：scrapeCache
+			//
+			// 其实prometheus内部已经维护了series cache了，但是很多情况下我们都是在一个goroutine中for循环插入数据，那么可以直接维护这个ref了，
+			// 直接Add只是少了查询series缓存的时间，其实也不是很费时，但是如果能够明确获取ref还是可以加速一些性能的。
 			ref1, err = app.Add(labels.FromStrings("guangzhou", "temperature"), time.Now().Unix()+int64(i), float64(30+i))
 			if err != nil {
 				panic(err)
@@ -73,6 +76,9 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	// 删除
+	query2(db)
+	db.Delete(0, time.Now().Unix()+9999, labels.MustNewMatcher(labels.MatchEqual, "guangzhou", "wind"))
 
 	querier, err := db.Querier(context.TODO(), time.Now().Unix()+5, time.Now().Unix()+100)
 
@@ -100,6 +106,7 @@ func openTestDB(opts *tsdb.Options, rngs []int64) (db *tsdb.DB) {
 	return db
 }
 
+// 可以使用 tsdbutil.Sample
 type sample struct {
 	t int64
 	v float64
