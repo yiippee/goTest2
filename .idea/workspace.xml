@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a69529d0-a970-4412-b5f3-dd76f8df6003" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/OpenTracing/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ratelimit/rate/main.go" afterDir="false" />
+    <list default="true" id="a69529d0-a970-4412-b5f3-dd76f8df6003" name="Default Changelist" comment="新增websocket传输图片例子">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consul/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/consul/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/etcd/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/etcd/client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/main2.go" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/main2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mongodb/mongo/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/mongodb/mongo/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ratelimit/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/ratelimit/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/websocketProxy/websocketProxy.go" beforeDir="false" afterPath="$PROJECT_DIR$/websocketProxy/websocketProxy.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,18 +39,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="1TdTblhfAxpUwZLiSyTO0UjJnIs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="GO_FMT" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
@@ -49,39 +62,22 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../etcd" />
-    <property name="settings.editor.selected.configurable" value="go.vgo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\lzb\golang\src\goTest2\websocket\image" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build goTest2/etcd">
+  <component name="RunManager" selected="Go Build.go build goTest2/tsdb">
     <configuration name="go build goTest2/etcd" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="goTest2" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
       <filePath value="$PROJECT_DIR$/etcd/client.go" />
       <package value="goTest2/etcd" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build goTest2/gateway" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="goTest2" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/gateway/main2.go" />
-      <package value="goTest2/gateway" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build goTest2/mongodb/mongo" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="goTest2" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/mongodb/mongo/main.go" />
-      <package value="goTest2/mongodb/mongo" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -103,97 +99,134 @@
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
+    <configuration name="go build goTest2/tcpproxy" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goTest2" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/tcpproxy/main.go" />
+      <package value="goTest2/tcpproxy" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build goTest2/tsdb" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="goTest2" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/tsdb/main.go" />
+      <package value="goTest2/tsdb" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build goTest2/tsdb" />
+        <item itemvalue="Go Build.go build goTest2/ratelimit" />
+        <item itemvalue="Go Build.go build goTest2/tcpproxy" />
         <item itemvalue="Go Build.go build goTest2/etcd" />
         <item itemvalue="Go Build.go build goTest2/ratelimit/rate" />
-        <item itemvalue="Go Build.go build goTest2/ratelimit" />
-        <item itemvalue="Go Build.go build goTest2/gateway" />
-        <item itemvalue="Go Build.go build goTest2/mongodb/mongo" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="新增websocket传输图片例子" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增websocket传输图片例子" />
+    <MESSAGE value="时序数据库例子" />
+    <MESSAGE value="注释 tsdb写入，&#10;addFast" />
+    <MESSAGE value="1,注释；2，delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="1,注释；2，delete" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
+    <environment>
+      <map>
+        <entry key="GOPROXY" value="https://goproxy.io" />
+      </map>
+    </environment>
     <proxy>https://mirrors.aliyun.com/goproxy/</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1576640484704">
+    <state x="695" y="325" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597891822324">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640484704" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1576640484704">
+    <state x="695" y="325" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597891822324" />
+    <state x="560" y="83" key="CommitChangelistDialog2" timestamp="1597979358648">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640484704" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1576640484704">
+    <state x="560" y="83" key="CommitChangelistDialog2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597979358648" />
+    <state x="847" y="384" key="EnvironmentVariablesDialog" timestamp="1597716776310">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640484704" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1576640484704">
+    <state x="847" y="384" key="EnvironmentVariablesDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597716776310" />
+    <state width="1877" height="343" key="GridCell.Tab.0.bottom" timestamp="1597979197960">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640484704" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1576640484705">
+    <state width="1877" height="343" key="GridCell.Tab.0.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597979197960" />
+    <state width="1877" height="343" key="GridCell.Tab.0.center" timestamp="1597979197960">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640484705" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1576640484705">
+    <state width="1877" height="343" key="GridCell.Tab.0.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597979197960" />
+    <state width="1877" height="343" key="GridCell.Tab.0.left" timestamp="1597979197960">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640484705" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1576640484705">
+    <state width="1877" height="343" key="GridCell.Tab.0.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597979197960" />
+    <state width="1877" height="343" key="GridCell.Tab.0.right" timestamp="1597979197960">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640484705" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1576640484705">
+    <state width="1877" height="343" key="GridCell.Tab.0.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597979197960" />
+    <state width="1877" height="343" key="GridCell.Tab.1.bottom" timestamp="1597979197960">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640484705" />
-    <state x="461" y="167" key="SettingsEditor" timestamp="1575541201206">
+    <state width="1877" height="343" key="GridCell.Tab.1.bottom/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597979197960" />
+    <state width="1877" height="343" key="GridCell.Tab.1.center" timestamp="1597979197960">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="461" y="167" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1575541201206" />
-    <state width="968" height="533" key="XDebugger.FullValuePopup" timestamp="1576639599721">
+    <state width="1877" height="343" key="GridCell.Tab.1.center/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597979197960" />
+    <state width="1877" height="343" key="GridCell.Tab.1.left" timestamp="1597979197960">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="968" height="533" key="XDebugger.FullValuePopup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576639599721" />
-    <state x="636" y="263" width="647" height="524" key="find.popup" timestamp="1576640634660">
+    <state width="1877" height="343" key="GridCell.Tab.1.left/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597979197960" />
+    <state width="1877" height="343" key="GridCell.Tab.1.right" timestamp="1597979197960">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="636" y="263" width="647" height="524" key="find.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1576640634660" />
+    <state width="1877" height="343" key="GridCell.Tab.1.right/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597979197960" />
+    <state x="461" y="169" key="SettingsEditor" timestamp="1597919011960">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="461" y="169" key="SettingsEditor/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597919011960" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1597928085720">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597928085720" />
+    <state width="968" height="533" key="XDebugger.FullValuePopup" timestamp="1597977890121">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="968" height="533" key="XDebugger.FullValuePopup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597977890121" />
+    <state x="736" y="310" key="com.goide.refactor.move.GoMoveDeclarationDialog" timestamp="1597842985748">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="736" y="310" key="com.goide.refactor.move.GoMoveDeclarationDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597842985748" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1597730314917">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597730314917" />
+    <state x="682" y="436" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1597831292453">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="682" y="436" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1920.1050/1920.0.1920.1050@0.0.1920.1050" timestamp="1597831292453" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -242,6 +275,11 @@
           <url>file://$PROJECT_DIR$/etcd/client.go</url>
           <line>40</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/tcpproxy/main.go</url>
+          <line>94</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

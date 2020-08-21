@@ -18,4 +18,4 @@
 /tsdb/data/wal/00000017
 /tsdb/data/wal/00000018
 /tsdb/data/lock
-/.idea/
+/.idea/*
