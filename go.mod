@@ -12,7 +12,10 @@ require (
 	github.com/funny/link v0.0.0-20190805113223-98708916287b
 	github.com/funny/utest v0.0.0-20161029064919-43870a374500 // indirect
 	github.com/gin-gonic/gin v1.4.0
+	github.com/go-redsync/redsync v1.4.2
+	github.com/go-redsync/redsync/v3 v3.0.0
 	github.com/golang/protobuf v1.4.2
+	github.com/gomodule/redigo v2.0.0+incompatible
 	github.com/google/btree v1.0.0 // indirect
 	github.com/gorilla/mux v1.7.4
 	github.com/gorilla/websocket v1.4.1
@@ -35,6 +38,7 @@ require (
 	github.com/silenceper/pool v0.0.0-20190419103246-92cc9e6ec7b8
 	github.com/smallnest/gofsm v0.0.0-20190306032117-f5ba1bddca7b
 	github.com/stretchr/testify v1.5.1
+	github.com/stvp/tempredis v0.0.0-20181119212430-b82af8480203
 	github.com/templexxx/cpufeat v0.0.0-20180724012125-cef66df7f161 // indirect
 	github.com/templexxx/xor v0.0.0-20181023030647-4e92f724b73b // indirect
 	github.com/tidwall/pretty v1.0.0 // indirect
