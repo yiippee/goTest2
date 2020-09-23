@@ -18,7 +18,8 @@ func query2(db *tsdb.DB) {
 		panic(err)
 	}
 
-	seriesSet := query(querier, labels.MustNewMatcher(labels.MatchEqual, "guangzhou", "temperature"))
+	seriesSet := query(querier,
+		labels.MustNewMatcher(labels.MatchEqual, "guangzhou", "temperature"))
 	fmt.Println(seriesSet)
 }
 func main() {
@@ -35,7 +36,7 @@ func main() {
 	for i := 0; i < 10; i++ {
 		// labels的name标识一个度量，类似与mysql中的table. value 标识一个属性或者说向量，类似于mysql中的一个列名，
 		// t 标识一个时间戳，这是时序数据库显著的特性，必须带有时间戳，而且以时间戳为唯一主键
-		// v 代表一个向量的具体值，类似mysql中一个列名的值
+		// v 代表一个向量的具体值，类似mysql中一个列名的值. 只能是一个kv的值
 		// 这里的例子是，表名是guangzhou，有个温度的属性，然后根据时间戳，分别记录温度在不同时间下的值。这就是时序数据库
 		if ref1 != 0 {
 			// 快速写入
@@ -44,15 +45,18 @@ func main() {
 				panic(err)
 			}
 		} else {
-			// 根据 labels来进行写入数据，会返回这个labels 的引用，有了这个引用就可以快速写入AddFast，不需要判断是否要新建这个labels
+			// 根据 labels来进行写入数据，会返回这个labels 的引用，有了这个引用就可以快速写入AddFast，
+			// 不需要判断是否要新建这个labels
 			// 因为时序数据库很多情况下，都是一个labels，但是会对应大量的数据，所以少了总是判断是否需要新建，就会快速一点。
 			// 这个与mysql也是一样的，因为mysql有实现定义好了的schema，所以不需要判定表是否存在等各种情况。
 			// 但是tsdb不需要用户定义schema，自己会自动判断是否需要新建，所以这个地方可以优化，也就是有 AddFast 这个方法了。
 			// prometheus对如何定义和使用这个缓存有很好的实例，参考：scrapeCache
 			//
-			// 其实prometheus内部已经维护了series cache了，但是很多情况下我们都是在一个goroutine中for循环插入数据，那么可以直接维护这个ref了，
+			// 其实prometheus内部已经维护了series cache了，但是很多情况下我们都是在一个goroutine中for循环插入数据，
+			// 那么可以直接维护这个ref了，
 			// 直接Add只是少了查询series缓存的时间，其实也不是很费时，但是如果能够明确获取ref还是可以加速一些性能的。
-			ref1, err = app.Add(labels.FromStrings("guangzhou", "temperature"), time.Now().Unix()+int64(i), float64(30+i))
+			ref1, err = app.Add(labels.FromStrings("guangzhou", "temperature"),
+				time.Now().Unix()+int64(i), float64(30+i))
 			if err != nil {
 				panic(err)
 			}
@@ -64,7 +68,8 @@ func main() {
 				panic(err)
 			}
 		} else {
-			ref2, err = app.Add(labels.FromStrings("guangzhou", "wind"), time.Now().Unix()+int64(i), float64(30+i))
+			ref2, err = app.Add(labels.FromStrings("guangzhou", "wind"),
+				time.Now().Unix()+int64(i), float64(30+i))
 			if err != nil {
 				panic(err)
 			}
@@ -78,11 +83,14 @@ func main() {
 	}
 	// 删除
 	query2(db)
-	db.Delete(0, time.Now().Unix()+9999, labels.MustNewMatcher(labels.MatchEqual, "guangzhou", "wind"))
+	db.Delete(0, time.Now().Unix()+9999,
+		labels.MustNewMatcher(labels.MatchEqual, "guangzhou", "wind"))
 
-	querier, err := db.Querier(context.TODO(), time.Now().Unix()+5, time.Now().Unix()+100)
+	querier, err := db.Querier(context.TODO(),
+		time.Now().Unix()+5, time.Now().Unix()+100)
 
-	seriesSet := query(querier, labels.MustNewMatcher(labels.MatchEqual, "guangzhou", "temperature"))
+	seriesSet := query(querier,
+		labels.MustNewMatcher(labels.MatchEqual, "guangzhou", "temperature"))
 	fmt.Println(seriesSet)
 }
 

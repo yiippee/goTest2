@@ -1,9 +1,10 @@
 package main
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	"gopkg.in/olahol/melody.v1"
-	"net/http"
 )
 
 type Server struct {
@@ -39,7 +40,14 @@ func main() {
 		srv.HandleRequest(c.Writer, c.Request)
 	})
 	srv.HandleMessage(func(s *melody.Session, msg []byte) {
-		srv.Broadcast(msg)
+		// srv.Broadcast(msg)
+		srv.BroadcastFilter(msg, func(s *melody.Session) bool {
+			if msg[0] == 82 {
+				return true
+			}
+			return false
+		})
 	})
+
 	srv.Run(":5000")
 }
