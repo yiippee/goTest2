@@ -4,6 +4,7 @@ go 1.12
 
 require (
 	github.com/Shopify/sarama v1.24.1
+	github.com/VictoriaMetrics/fastcache v1.5.7
 	github.com/auth0/go-jwt-middleware v0.0.0-20200810150920-a32d7af194d1 // indirect
 	github.com/coreos/etcd v3.3.17+incompatible
 	github.com/didip/tollbooth v4.0.2+incompatible
@@ -13,8 +14,12 @@ require (
 	github.com/funny/utest v0.0.0-20161029064919-43870a374500 // indirect
 	github.com/gin-gonic/gin v1.4.0
 	github.com/go-kit/kit v0.10.0
+	github.com/go-redis/cache/v8 v8.0.0
+	github.com/go-redis/redis v6.15.9+incompatible
+	github.com/go-redis/redis/v8 v8.1.3
 	github.com/go-redsync/redsync v1.4.2 // indirect
 	github.com/go-redsync/redsync/v3 v3.0.0
+	github.com/golang/protobuf v1.4.2
 	github.com/gomodule/redigo v2.0.0+incompatible
 	github.com/google/btree v1.0.0 // indirect
 	github.com/gorilla/mux v1.7.4
@@ -37,18 +42,19 @@ require (
 	github.com/rakyll/statik v0.1.6
 	github.com/silenceper/pool v0.0.0-20190419103246-92cc9e6ec7b8
 	github.com/smallnest/gofsm v0.0.0-20190306032117-f5ba1bddca7b
-	github.com/stretchr/testify v1.5.1
+	github.com/stretchr/testify v1.6.1
 	github.com/stvp/tempredis v0.0.0-20181119212430-b82af8480203
 	github.com/templexxx/cpufeat v0.0.0-20180724012125-cef66df7f161 // indirect
 	github.com/templexxx/xor v0.0.0-20181023030647-4e92f724b73b // indirect
 	github.com/tidwall/gjson v1.6.1
+	github.com/tidwall/lotsa v1.0.1 // indirect
 	github.com/tidwall/uhaha v0.2.1
 	github.com/tjfoc/gmsm v1.0.1 // indirect
 	github.com/unrolled/secure v1.0.4
 	github.com/xtaci/kcp-go v5.4.11+incompatible
 	github.com/xtaci/lossyconn v0.0.0-20190602105132-8df528c0c9ae // indirect
 	go.mongodb.org/mongo-driver v1.3.2
-	golang.org/x/net v0.0.0-20200707034311-ab3426394381
+	golang.org/x/net v0.0.0-20200904194848-62affa334b73
 	golang.org/x/time v0.0.0-20200630173020-3af7569d3a1e
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 	gopkg.in/olahol/melody.v1 v1.0.0-20170518105555-d52139073376
