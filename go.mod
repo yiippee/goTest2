@@ -3,9 +3,11 @@ module goTest2
 go 1.12
 
 require (
+	github.com/Allenxuxu/gev v0.1.9
 	github.com/Shopify/sarama v1.24.1
-	github.com/VictoriaMetrics/fastcache v1.5.7
+	github.com/VictoriaMetrics/fastcache v1.5.7 // indirect
 	github.com/auth0/go-jwt-middleware v0.0.0-20200810150920-a32d7af194d1 // indirect
+	github.com/blend/go-sdk v1.1.1 // indirect
 	github.com/coreos/etcd v3.3.17+incompatible
 	github.com/didip/tollbooth v4.0.2+incompatible
 	github.com/didip/tollbooth_gin v0.0.0-20170928041415-5752492be505
@@ -15,10 +17,11 @@ require (
 	github.com/gin-gonic/gin v1.4.0
 	github.com/go-kit/kit v0.10.0
 	github.com/go-redis/cache/v8 v8.0.0
-	github.com/go-redis/redis v6.15.9+incompatible
+	github.com/go-redis/redis v6.15.9+incompatible // indirect
 	github.com/go-redis/redis/v8 v8.1.3
 	github.com/go-redsync/redsync v1.4.2 // indirect
 	github.com/go-redsync/redsync/v3 v3.0.0
+	github.com/gobwas/httphead v0.0.0-20200921212729-da3d93bc3c58 // indirect
 	github.com/golang/protobuf v1.4.2
 	github.com/gomodule/redigo v2.0.0+incompatible
 	github.com/google/btree v1.0.0 // indirect
@@ -35,11 +38,14 @@ require (
 	github.com/mkevac/debugcharts v0.0.0-20180124214838-d3203a8fa926 // indirect
 	github.com/nareix/joy4 v0.0.0-20181022032202-3ddbc8f9d431
 	github.com/opentracing/opentracing-go v1.2.0
+	github.com/panjf2000/gnet v1.3.0
+	github.com/parnurzeal/gorequest v0.2.16
 	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/prometheus/prometheus v1.8.2-0.20200819073411-9438bf735a1e
 	github.com/prometheus/tsdb v0.10.0 // indirect
 	github.com/pyloque/gocaptain v0.0.0-20160623031443-8e6a4933f710
 	github.com/rakyll/statik v0.1.6
+	github.com/robfig/cron v1.2.0
 	github.com/silenceper/pool v0.0.0-20190419103246-92cc9e6ec7b8
 	github.com/smallnest/gofsm v0.0.0-20190306032117-f5ba1bddca7b
 	github.com/stretchr/testify v1.6.1
@@ -51,6 +57,8 @@ require (
 	github.com/tidwall/uhaha v0.2.1
 	github.com/tjfoc/gmsm v1.0.1 // indirect
 	github.com/unrolled/secure v1.0.4
+	github.com/urfave/cli/v2 v2.2.0
+	github.com/wcharczuk/go-chart v2.0.1+incompatible
 	github.com/xtaci/kcp-go v5.4.11+incompatible
 	github.com/xtaci/lossyconn v0.0.0-20190602105132-8df528c0c9ae // indirect
 	go.mongodb.org/mongo-driver v1.3.2
@@ -59,8 +67,10 @@ require (
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 	gopkg.in/olahol/melody.v1 v1.0.0-20170518105555-d52139073376
 	gopkg.in/olivere/elastic.v5 v5.0.82
+	gopkg.in/yaml.v2 v2.3.0
+	moul.io/http2curl v1.0.0 // indirect
 )
 
 replace github.com/lzb/replace => ./mod-replace/replace
 
-replace google.golang.org/protobuf => google.golang.org/protobuf v1.23.0
+// replace google.golang.org/protobuf => google.golang.org/protobuf v1.22.0

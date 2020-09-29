@@ -35,8 +35,8 @@ func main() {
 	})
 	mux2.HandleFunc("/test2/", Test2)
 
-	go http.ListenAndServe(":16379", mux)
-	http.ListenAndServe(":26379", mux2)
+	// go http.ListenAndServe(":16379", mux)
+	http.ListenAndServe(":9090", mux2)
 }
 
 func Test(w http.ResponseWriter, r *http.Request) {

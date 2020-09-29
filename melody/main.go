@@ -34,6 +34,7 @@ func main() {
 		Melody: melody.New(),
 	}
 	srv.GET("/", func(c *gin.Context) {
+		c.Request.RemoteAddr()
 		http.ServeFile(c.Writer, c.Request, "index.html")
 	})
 	srv.GET("/ws", func(c *gin.Context) {

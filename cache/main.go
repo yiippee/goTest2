@@ -18,8 +18,7 @@ type Object struct {
 func main() {
 	ring := redis.NewRing(&redis.RingOptions{
 		Addrs: map[string]string{
-			"server1": ":6379",
-			"server2": ":6380",
+			"server": ":11001",
 		},
 	})
 
@@ -55,8 +54,7 @@ func main() {
 func Example_advancedUsage() {
 	ring := redis.NewRing(&redis.RingOptions{
 		Addrs: map[string]string{
-			"server1": ":6379",
-			"server2": ":6380",
+			"server1": ":11001",
 		},
 	})
 
