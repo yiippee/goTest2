@@ -4,17 +4,19 @@ go 1.12
 
 require (
 	github.com/Allenxuxu/gev v0.1.9
+	github.com/Allenxuxu/mMicro v0.0.0-20200605111140-77d7c5116b4a // indirect
+	github.com/Allenxuxu/protoc-gen-mMicro v0.0.0-20200427075139-960c6520e869 // indirect
 	github.com/Shopify/sarama v1.24.1
 	github.com/VictoriaMetrics/fastcache v1.5.7 // indirect
 	github.com/auth0/go-jwt-middleware v0.0.0-20200810150920-a32d7af194d1 // indirect
 	github.com/blend/go-sdk v1.1.1 // indirect
-	github.com/coreos/etcd v3.3.17+incompatible
+	github.com/coreos/etcd v3.3.18+incompatible
 	github.com/didip/tollbooth v4.0.2+incompatible
 	github.com/didip/tollbooth_gin v0.0.0-20170928041415-5752492be505
 	github.com/fatih/pool v3.0.0+incompatible
 	github.com/funny/link v0.0.0-20190805113223-98708916287b
 	github.com/funny/utest v0.0.0-20161029064919-43870a374500 // indirect
-	github.com/gin-gonic/gin v1.4.0
+	github.com/gin-gonic/gin v1.6.2
 	github.com/go-kit/kit v0.10.0
 	github.com/go-redis/cache/v8 v8.0.0
 	github.com/go-redis/redis v6.15.9+incompatible // indirect
@@ -64,6 +66,7 @@ require (
 	go.mongodb.org/mongo-driver v1.3.2
 	golang.org/x/net v0.0.0-20200904194848-62affa334b73
 	golang.org/x/time v0.0.0-20200630173020-3af7569d3a1e
+	gopkg.in/go-playground/validator.v8 v8.18.2 // indirect
 	gopkg.in/mgo.v2 v2.0.0-20190816093944-a6b53ec6cb22
 	gopkg.in/olahol/melody.v1 v1.0.0-20170518105555-d52139073376
 	gopkg.in/olivere/elastic.v5 v5.0.82
