@@ -7,9 +7,16 @@ import (
 )
 
 func main() {
-	request := gorequest.New().Proxy("http://156.251.125.135:3976")
-	resp, body, errs := request.Get("http://httpbin.org/get").End()
+	/*
+		https://www.google.com/finance/converter?a=" . $amount . "&from=" . $from_Currency . "&to=" . $to_Currency;
+	*/
+	url := `http://api.k780.com/?app=finance.rate&scur=USD&tcur=CNY&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4`
+
+	request := gorequest.New()
+	//resp, body, errs := request.Get(url).End()
+
 	//// To reuse same client with no_proxy, use empty string:
-	//resp, body, errs = request.Proxy("").Get("http://example-no-proxy.com").End()
+	resp, body, errs := request.Proxy("").Get(url).End()
+
 	fmt.Println(resp, body, errs)
 }
