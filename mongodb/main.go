@@ -9,6 +9,22 @@ import (
 	"gopkg.in/mgo.v2/bson"
 )
 
+type Msg struct {
+	Id       int64
+	Sender   int64
+	Receiver int64
+	Msg      string
+}
+
+type Msg2 struct {
+	Id  int64
+	Msg []struct {
+		Sender   int64
+		Receiver int64
+		Msg      string
+	}
+}
+
 type User struct {
 	Id        bson.ObjectId `bson:"_id"`
 	Username  string        `bson:"name"`
@@ -18,16 +34,16 @@ type User struct {
 }
 
 type Student struct {
-	Id    bson.ObjectId `bson:"_id"`
-	Sname string        `bson:"sname"`
-	Sage  int           `bson:"sage"`
-	Score float64       `bson:"score"`
-	Records []Record    `bson:"records"`
-	Time  time.Time     `bson:"time"`
+	Id      bson.ObjectId `bson:"_id"`
+	Sname   string        `bson:"sname"`
+	Sage    int           `bson:"sage"`
+	Score   float64       `bson:"score"`
+	Records []Record      `bson:"records"`
+	Time    time.Time     `bson:"time"`
 }
 type Record struct {
-	A int `bson:"a"`
-	B int `bson:"b"`
+	A int    `bson:"a"`
+	B int    `bson:"b"`
 	C string `bson:"c"`
 }
 
@@ -68,13 +84,13 @@ func myFind() {
 
 func myInsert() {
 	stu := Student{
-		Id: bson.NewObjectId(),
-		Sname: "lizhanbin",
-		Sage:  31,
+		Id:    bson.NewObjectId(),
+		Sname: "lzb",
+		Sage:  999,
 		Score: 100,
-		Time: time.Now(),
+		Time:  time.Now(),
 		Records: []Record{
-			{1,2,"12"},
+			{1, 2, "12"},
 			{3, 4, "34"},
 			{5, 6, "56"},
 		},

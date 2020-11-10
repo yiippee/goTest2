@@ -1,42 +1,47 @@
 module goTest2
 
-go 1.12
+go 1.13
 
 require (
 	github.com/Allenxuxu/gev v0.1.9
 	github.com/Allenxuxu/mMicro v0.0.0-20200605111140-77d7c5116b4a // indirect
 	github.com/Allenxuxu/protoc-gen-mMicro v0.0.0-20200427075139-960c6520e869 // indirect
+	github.com/Allenxuxu/toolkit v0.0.0-20190930031734-928c4d41e573
 	github.com/Shopify/sarama v1.24.1
 	github.com/VictoriaMetrics/fastcache v1.5.7 // indirect
 	github.com/auth0/go-jwt-middleware v0.0.0-20200810150920-a32d7af194d1 // indirect
 	github.com/blend/go-sdk v1.1.1 // indirect
-	github.com/coreos/etcd v3.3.18+incompatible
+	github.com/coreos/etcd v3.3.22+incompatible
+	github.com/datasweet/datatable v0.3.1
 	github.com/didip/tollbooth v4.0.2+incompatible
 	github.com/didip/tollbooth_gin v0.0.0-20170928041415-5752492be505
+	github.com/douyu/jupiter v0.2.5
 	github.com/fatih/pool v3.0.0+incompatible
 	github.com/funny/link v0.0.0-20190805113223-98708916287b
 	github.com/funny/utest v0.0.0-20161029064919-43870a374500 // indirect
-	github.com/gin-gonic/gin v1.6.2
+	github.com/gin-gonic/gin v1.6.3
+	github.com/go-echarts/go-echarts/v2 v2.0.1
 	github.com/go-kit/kit v0.10.0
 	github.com/go-redis/cache/v8 v8.0.0
 	github.com/go-redis/redis v6.15.9+incompatible // indirect
 	github.com/go-redis/redis/v8 v8.1.3
 	github.com/go-redsync/redsync v1.4.2 // indirect
-	github.com/go-redsync/redsync/v3 v3.0.0
+	github.com/go-redsync/redsync/v3 v3.0.0 // indirect
 	github.com/gobwas/httphead v0.0.0-20200921212729-da3d93bc3c58 // indirect
 	github.com/golang/protobuf v1.4.2
 	github.com/gomodule/redigo v2.0.0+incompatible
 	github.com/google/btree v1.0.0 // indirect
 	github.com/gorilla/mux v1.7.4
-	github.com/gorilla/websocket v1.4.1
+	github.com/gorilla/websocket v1.4.2
 	github.com/hashicorp/consul/api v1.5.0
 	github.com/itfantasy/gonode v0.0.0-20191022090118-359a2ae7228e
+	github.com/jinzhu/gorm v1.9.16
 	github.com/juju/ratelimit v1.0.1 // indirect
 	github.com/julianshen/gin-limiter v0.0.0-20161123033831-fc39b5e90fe7
-	github.com/klauspost/cpuid v1.2.1 // indirect
 	github.com/klauspost/reedsolomon v1.9.3 // indirect
+	github.com/labstack/echo/v4 v4.1.16
 	github.com/lzb/replace v0.0.0-00010101000000-000000000000
-	github.com/micro/go-micro v1.16.0
+	github.com/micro/go-micro v1.18.0
 	github.com/mkevac/debugcharts v0.0.0-20180124214838-d3203a8fa926 // indirect
 	github.com/nareix/joy4 v0.0.0-20181022032202-3ddbc8f9d431
 	github.com/opentracing/opentracing-go v1.2.0
